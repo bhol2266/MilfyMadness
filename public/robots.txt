@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /pornstar/query
+Disallow: /search/query   
+Disallow: /category/query
+Disallow: http://xhamster.gg/
+Disallow: https://xhamster.gg/
+Allow: /
+
+
+Sitemap: https://www.xhamster.gg/sitemap.xml
