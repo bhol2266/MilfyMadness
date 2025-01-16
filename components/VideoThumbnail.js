@@ -59,7 +59,7 @@ function VideoThumbnail({ details, type }) {
                     <div className={`relative w-full overflow-hidden  ${viewType === "grid" ? "aspect-custom md:aspect-video" : "aspect-video"} ${containsBannedKeywords ? "hidden" : ""}`}>
                         <img
                             className="absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out"
-                            src={video.thumbnail+"dsfa"}
+                            src={video.thumbnail}
                             alt="Video Thumbnail"
                         />
                         <div className="absolute bottom-1.5 right-2 bg-black bg-opacity-60 text-white text-xs md:text-sm lg:text-md 2xl:text-lg  px-2 py-1 rounded">
@@ -70,7 +70,7 @@ function VideoThumbnail({ details, type }) {
                             className={`absolute top-0 left-0 w-full h-full object-cover ${showPoster ? 'opacity-0' : 'opacity-100'}`}
                             onMouseOver={playMovie}
                             onMouseLeave={stopMovie}
-                            src={video.previewVideo+"dsfa"}
+                            src={video.previewVideo}
                             preload="none"
                             muted
                         />
