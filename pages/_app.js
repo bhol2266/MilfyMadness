@@ -68,7 +68,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content="https://www.Xhamster.gg" />
+        <meta property="og:url" content="https://www.MilfyMadness.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/logo.png" />
@@ -78,14 +78,14 @@ function MyApp({ Component, pageProps }) {
 
       <Script
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-BFJSRDR97D"
+        src="https://www.googletagmanager.com/gtag/js?id=G-4F2V2LG2WF"
       />
 
       <Script id="gtm-script" strategy="afterInteractive">
         {` window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-BFJSRDR97D');`}
+        gtag('config', 'G-4F2V2LG2WF');`}
       </Script>
 
       <AuthContextProvider>
