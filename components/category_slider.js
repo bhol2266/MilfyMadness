@@ -17,7 +17,7 @@ function Category_slider({ trendingCategories }) {
 
 
     return (
-        <div className='flex items-start space-x-1 text-color overflow-x-scroll scrollbar-hide md:hidden mb-6'>
+        <div className='flex items-start space-x-1 text-color overflow-x-scroll scrollbar-hide md:hidden mb-6 border-[1px] border-gray-50'>
 
             {filteredCategories.map(category => {
 
