@@ -74,7 +74,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:image" content="/logo.png" />
         <meta name="google-site-verification" content="OwcdmtgnWuCidVEu_oPS6eQhmgssoZVQXXPv-BGHVRE" />
         <meta name="clckd" content="989abd1ff7e1399f3e4fc8bef01007d3" />
-        <meta name="6a97888e-site-verification" content="a08d328f200c660d81b1e7a9240a01d5" />      </Head>
+        <meta name="6a97888e-site-verification" content="8fe8681a16b3f9b5b28f489ea558e57d" />          </Head>
 
       <Script
         strategy="afterInteractive"
