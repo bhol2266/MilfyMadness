@@ -21,7 +21,7 @@ function Pornstar_slider({ trendingPornstars }) {
 
 
     return (
-        <div className='flex items-start space-x-1 text-color overflow-x-scroll scrollbar-hide md:hidden mb-6 border-[1px] border-gray-50'>
+        <div className='flex items-start space-x-1 text-color overflow-x-scroll scrollbar-hide md:hidden mb-6'>
             {filteredPornstars.map(pornstarObj => {
 
                 const code = pornstarObj.href.substring(1, pornstarObj.href.indexOf('/pornstar'))
@@ -31,7 +31,7 @@ function Pornstar_slider({ trendingPornstars }) {
                         <div className='flex flex-col justify-center items-center mx-1'>
                             <div className='w-[90px]'>
                                 <img
-                                    className='shadow-md object-contain rounded-[5px] '
+                                    className='shadow-md object-contain rounded-[5px] border-[1px] border-gray-50'
                                     src={pornstarObj.thumbnail}
                                     loading="lazy"
                                     alt={pornstarObj.Name}

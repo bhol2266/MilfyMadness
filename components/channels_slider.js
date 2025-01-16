@@ -21,7 +21,7 @@ function Channels_slider({ trendingChannels, trendingDataType }) {
 
 
     return (
-        <div className='flex items-start space-x-1 text-color overflow-x-scroll scrollbar-hide md:hidden my-4 border-[1px] border-gray-50'>
+        <div className='flex items-start space-x-1 text-color overflow-x-scroll scrollbar-hide md:hidden my-4 '>
             {filteredChannels.map(channelObj => {
                 // Extract code and normalized channel name
                 const code = channelObj.channel_href.substring(channelObj.channel_href.indexOf('/channel') - 2, channelObj.channel_href.indexOf('/channel')).toLowerCase();
@@ -32,7 +32,7 @@ function Channels_slider({ trendingChannels, trendingDataType }) {
                         <div className='flex flex-col justify-center items-center mx-1'>
                             <div className='w-[90px]'>
                                 <img
-                                    className='shadow-md rounded-full object-cover aspect-square'
+                                    className='shadow-md rounded-full object-cover aspect-square border-[1px] border-gray-50'
                                     src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${normalizedChannelName}.jpg`}
                                     loading="lazy"
                                     alt={channelObj.channel_name}

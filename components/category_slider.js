@@ -17,15 +17,15 @@ function Category_slider({ trendingCategories }) {
 
 
     return (
-        <div className='flex items-start space-x-1 text-color overflow-x-scroll scrollbar-hide md:hidden mb-6 border-[1px] border-gray-50'>
+        <div className='flex items-start space-x-1 text-color overflow-x-scroll scrollbar-hide md:hidden mb-6'>
 
             {filteredCategories.map(category => {
 
                 return (
                     <Link href={`/category/${category.name.substring(0, category.name.indexOf('.png')).toLowerCase()}`} key={category.name} >
-                        <div className='flex flex-col justify-center items-center mx-1'>
+                        <div className='flex flex-col justify-center items-center mx-1 '>
                             <div className='w-[90px]'>
-                                <img className='shadow-md rounded-full object-cover aspect-square'
+                                <img className='shadow-md rounded-full object-cover aspect-square border-[1px] border-gray-50'
                                     alt={category.name.substring(0, category.name.indexOf('.png')).toLowerCase()}
                                     src={`${process.env.CLOUDFLARE_STORAGE}category_images/${category.name.toLowerCase().substring(0, category.name.indexOf('.png'))}.png`}
 
