@@ -45,7 +45,7 @@ function Search({ video_collection, pages }) {
                 <meta property="og:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on xHamster!`} />
                 <meta name="twitter:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - xHamster | ${currentPageNumberURL}`} />
                 <meta name="twitter:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on xHamster!`} />
-                <link rel="canonical" href={`https://www.xhamster.gg/search/${searchkey}/page/${page}`} />
+                <link rel="canonical" href={`https://www.milfymadness.com/search/${searchkey}/page/${page}`} />
 
 
 

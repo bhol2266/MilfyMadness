@@ -34,7 +34,7 @@ function Footer() {
                 </div>
 
                 <div className='lg:ml-[120px] xl:ml-[200px]'>
-                    <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>Xhamster Originals exclusive content</p>
+                    <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>MilfyMadness Originals exclusive content</p>
                     <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>Unlock 2708 channels in one subscription</p>
                     <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>Never get bored</p>
                     <p className='text-white font-light text-[16px] text-left my-3 lg:text-[18px]'>Download thousands of videos</p>
@@ -154,7 +154,7 @@ function Footer() {
             </Link>
 
 
-            <p className='text-sm sm:text-md md:text-lg text-[#AEABAB] mt-8'>2021-2024 Xhamster.com</p>
+            <p className='text-sm sm:text-md md:text-lg text-[#AEABAB] mt-8'>2021-2025 MilfyMadness.com</p>
 
         </div>
 

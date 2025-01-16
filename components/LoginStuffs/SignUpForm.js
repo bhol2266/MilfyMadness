@@ -70,6 +70,11 @@ export const SignUpForm = () => {
             authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${REDIRECT_URI5}&scope=${scope}`;
 
         }
+        if (currentHost.includes("milfymadness.com")) {
+            const REDIRECT_URI6 = "https://www.milfymadness.com/api/auth/milfymadness/callback"
+            authUrl = `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${REDIRECT_URI6}&scope=${scope}`;
+
+        }
         window.location.href = authUrl;
 
     }

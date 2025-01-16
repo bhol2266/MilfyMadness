@@ -90,7 +90,7 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
                 <meta property="og:description" content={`Free ${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} Porn Videos. Discover ${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} sex videos featuring porn stars fucking in XXX scenes, including amateur, anal, blowjob & more!`} />
                 <meta name="twitter:title" content={`${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} Porn Videos - Xhamster`} />
                 <meta name="twitter:description" content={`Free ${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} Porn Videos. Discover ${capitalizeFirstLetter(channel_name.replace('+', " ").replace("+", " "))} sex videos featuring porn stars fucking in XXX scenes, including amateur, anal, blowjob & more!`} />
-              <link rel="canonical" href={`https://www.Xhamster.gg/channels/${code}/${channelname}/page/${page}`} />
+              <link rel="canonical" href={`https://www.milfymadness.com/channels/${code}/${channelname}/page/${page}`} />
 
 
 

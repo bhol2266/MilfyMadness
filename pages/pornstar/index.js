@@ -91,7 +91,7 @@ function Index() {
                 <meta property="og:description" content="Discover the hottest adult film stars and models on the largest FREE adult tube at xHamster.com. Enjoy a wide selection of stunning babes ready to please you 24/7!" />
                 <meta name="twitter:title" content="The Hottest Pornstars: Watch Free Top Porn Star Videos on xHamster" />
                 <meta name="twitter:description" content="Discover the hottest adult film stars and models on the largest FREE adult tube at xHamster.com. Enjoy a wide selection of stunning babes ready to please you 24/7!" />
-                <link rel="canonical" href={`https://www.xHamster.gg/pornstar`} />
+                <link rel="canonical" href={`https://www.milfymadness.com/pornstar`} />
 
             </Head>
 

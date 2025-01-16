@@ -89,7 +89,7 @@ function Index({ video_collection, pages, pornstarInformation, collageImages, po
                 <meta property="og:description" content={`Find nude ${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} porn videos featuring the porn star fucks in XXX scenes, including amateur, anal, blowjob!`} />
                 <meta name="twitter:title" content={`${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} Porn Videos ${getcurrentyear()} - xHamster`} />
                 <meta name="twitter:description" content={`Find nude ${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} porn videos featuring the porn star fucks in XXX scenes, including amateur, anal, blowjob!`} />
-                <link rel="canonical" href={`https://www.xHamster.gg/pornstar/${code}/${pornstarname}`} />
+                <link rel="canonical" href={`https://www.milfymadness.com/pornstar/${code}/${pornstarname}`} />
             </Head>
 
 

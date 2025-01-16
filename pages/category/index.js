@@ -64,7 +64,7 @@ function Index() {
                 <meta property="og:description" content="Check out our extensive list of all porn video categories on xHamster, featuring even the rarest sex niches. Discover the XXX videos that cater to your preferences!" />
                 <meta name="twitter:title" content="Explore Porn Video Categories and a variety of Sex Niches on xHamster" />
                 <meta name="twitter:description" content="Check out our extensive list of all porn video categories on xHamster, featuring even the rarest sex niches. Discover the XXX videos that cater to your preferences!" />
-                <link rel="canonical" href={`https://www.xhamster.gg/category`} />
+                <link rel="canonical" href={`https://www.milfymadness.com/category`} />
 
 
 

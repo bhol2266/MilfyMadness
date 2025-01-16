@@ -103,7 +103,7 @@ function Navbar() {
             setsearchBarVisibility('hidden')
 
         }
-        router.push('/search')
+        // router.push('/search')
     }
 
     const goSearch = (e) => {
@@ -177,8 +177,9 @@ function Navbar() {
                                     <Link href='/'>
                                         <img src='/logo.png' alt="logo" className='w-[50px] h-[50px] object-cover object-top' />
                                     </Link>
-
-                                    <img src='/logo_text.png' alt="logo" className='w-fit h-[30px] mt-2' />
+                                    <Link href='/'>
+                                        <img src='/logo_text.png' alt="logo" className='w-fit h-[30px] mt-2' />
+                                    </Link>
 
                                     {location &&
                                         <div className='cursor-pointer' onClick={handleClickFlag}>
@@ -418,8 +419,9 @@ function Navbar() {
                 <div className=' flex items-center justify-between  pt-2 pb-2 text-white '>
 
                     <div className='flex items-center space-x-1 md:space-x-3  ml-2' >
-
-                        <img className="ml-[90px] w-[180px]" src='/logo_text.png' alt='logo_text'   ></img>
+                        <Link href='/'>
+                            <img className="ml-[90px] w-[180px]" src='/logo_text.png' alt='logo_text'   ></img>
+                        </Link>
 
                         <a target="_blank" href={countryBlocked ? "https://go.xxxiijmp.com/?userId=9ea31ff27db3b7242eabcc2d26ac0eaf38f093c68528e70c2e7f5a72df55c42e" : "https://chaturbate.com/in/?tour=LQps&campaign=3v7pk&track=default&room=ukdevelopers"} rel="noopener noreferrer">
                             <div className='ml-[30px] flex  items-center  cursor-pointer hover:scale-105  transition-all space-x-2  xl:flex'>

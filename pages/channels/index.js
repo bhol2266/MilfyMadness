@@ -135,7 +135,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                     <meta property="og:description" content="Explore an extensive catalog of the top porn tube channels featuring talented sex video producers and XXX creators. Discover complimentary films from your preferred adult paysites on xHamster!" />
                     <meta name="twitter:title" content="Top Porn Channels: Leading Sex Video Producers & Creators | xHamster" />
                     <meta name="twitter:description" content="Explore an extensive catalog of the top porn tube channels featuring talented sex video producers and XXX creators. Discover complimentary films from your preferred adult paysites on xHamster!" />
-                    <link rel="canonical" href={`https://www.xhamster.gg/channels`} />
+                    <link rel="canonical" href={`https://www.milfymadness.com/channels`} />
 
 
 

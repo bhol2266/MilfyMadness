@@ -52,7 +52,7 @@ function Search({ video_collection, pages }) {
         <meta name="twitter:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on xHamster!`} />
         G
         {/* Additional meta tags */}
-        <link rel="canonical" href={`https://www.xHamster.gg/search/${searchkey}`} />
+        <link rel="canonical" href={`https://www.milfymadness.com/search/${searchkey}`} />
       </Head>
 
       <Header keyword={searchkey.replace("+", " ")} pageNumber={currentPageNumberURL} />

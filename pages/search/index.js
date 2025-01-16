@@ -92,7 +92,7 @@ function Search({ tags }) {
                 <meta name="twitter:title" content="Search Porn Videos, Discover Free XXX Movies Online | xHamster" />
                 <meta name="twitter:description" content="xHamster is known as one of the most advanced porn video search engines, offering a wide variety of full-length hardcore sex movies, short XXX video clips, and high-quality adult tube scenes. Whatever type of porn video you desire, you can count on xHamster to deliver exactly what you're looking for!" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <link rel="canonical" href={`https://www.xhamster.gg/search`} />
+                <link rel="canonical" href={`https://www.milfymadness.com/search`} />
 
             </Head>
 
