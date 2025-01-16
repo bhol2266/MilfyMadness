@@ -32,16 +32,16 @@ function BannerAds() {
             />
 
             {/* Inline script to initialize the AdProvider */}
-            <Script
+            {/* <Script
             id={uniqid}
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
                     __html: `(AdProvider = window.AdProvider || []).push({ "serve": {} });`,
                 }}
-            />
+            /> */}
 
             {/* The ad element */}
-            <ins className="eas6a97888e38" data-zoneid="5500694"></ins>
+            {/* <ins className="eas6a97888e38" data-zoneid="5500694"></ins> */}
 
 
         </div>
