@@ -144,9 +144,9 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
 
                 <div className={` mt-4  transition ease-in-out delay-150 `}>
-                    <div className='flex my-1  md:w-3/5 md:mx-auto p-2 px-3  border-[1px] border-gray-200 space-x-2 md:space-x-4 xl:px-[50px] rounded-[15px]'  >
+                    <div className='flex my-1  md:w-3/5 md:mx-auto p-2 px-3  border-[1px] border-gray-100 space-x-2 md:space-x-4 xl:px-[50px] rounded-[15px]'  >
                         <SearchIcon className='h-6 w-6 text-gray-400' />
-                        <input className='focus:outline-none flex-grow  font-inter rounded-lg ' type='text' onChange={(event) => { onChangeHandler(event.target.value) }} placeholder='Search channel...'></input>
+                        <input className='focus:outline-none flex-grow  font-inter rounded-lg bg-transparent' type='text' onChange={(event) => { onChangeHandler(event.target.value) }} placeholder='Search channel...'></input>
                     </div>
                 </div>
 
@@ -156,12 +156,12 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                         return (
                             <Link key={channelName} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
                                 <img
-                                    className='object-cover w-full rounded-[15px] border-[1px] border-gray-200 '
+                                    className='object-cover w-full rounded-[15px] border-[1px] border-gray-100 '
                                     alt={channelName}
                                     src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channelName.replace(/ /g, "_").toLowerCase()}.jpg`}
                                     loading="lazy"
                                 ></img>
-                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center   text-theme '>{channelName}</h2>
+                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center   text-theme_text '>{channelName}</h2>
                             </div>
                             </Link>
                         )
@@ -170,7 +170,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                 </div>
 
 
-                <h1 className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme font-poppins font-medium w-fit border-b-[3px] border-[#FFBB00]'>Trending Channels</h1>
+                <h1 className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme_text font-poppins font-medium w-fit border-b-[3px] border-theme_green'>Trending Channels</h1>
 
 
 
@@ -182,12 +182,12 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                             <Link key={channelName} href={href}>
                                 <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
                                     <img
-                                        className='object-cover w-full rounded-[15px] border-[1px] border-gray-200 '
+                                        className='object-cover w-full rounded-[15px] border-[1px] border-gray-100 '
                                         alt={channelName}
                                         src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channelName.replace(/ /g, "_").toLowerCase()}.jpg`}
                                         loading="lazy"
                                     ></img>
-                                    <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center   text-theme '>{channelName}</h2>
+                                    <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center   text-theme_text '>{channelName}</h2>
                                 </div>
                             </Link>
                             // items[i].charAt(0).toUpperCase() + items[i].substring(1);
@@ -198,7 +198,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
                 </div>
 
-                <p className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme font-poppins font-medium w-fit border-b-[3px] border-[#FFBB00]'>New Channels</p>
+                <p className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme_text font-poppins font-medium w-fit border-b-[3px] border-theme_green'>New Channels</p>
 
 
 
@@ -208,12 +208,12 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                         return (
                             <Link key={channelName} href={href}>   <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
                                 <img
-                                    className='object-cover w-full rounded-[15px] border-[1px] border-gray-200 '
+                                    className='object-cover w-full rounded-[15px] border-[1px] border-gray-100 '
                                     alt={channelName}
                                     src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channelName.replace(/ /g, "_").toLowerCase()}.jpg`}
                                     loading="lazy"
                                 ></img>
-                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center   text-theme '>{channelName}</h2>
+                                <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center   text-theme_text '>{channelName}</h2>
                             </div>
                             </Link>
                             // items[i].charAt(0).toUpperCase() + items[i].substring(1);
@@ -225,7 +225,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                 </div>
 
 
-                <p className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme font-poppins font-medium w-fit border-b-[3px] border-[#FFBB00]'>All Channels</p>
+                <p className=' mt-4 mb-2 lg:mb-4 2xl:my-6 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme_text font-poppins font-medium w-fit border-b-[3px] border-theme_green'>All Channels</p>
 
 
 
@@ -246,12 +246,12 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                                     <Link key={obj.channel_name} href={href}>
                                         <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
                                             <img
-                                                className='object-cover w-full rounded-[15px] border-[1px] border-gray-200 '
+                                                className='object-cover w-full rounded-[15px] border-[1px] border-gray-100 '
                                                 alt={obj.image_url}
                                                 src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${obj.channel_name.replace(/ /g, "_").toLowerCase()}.jpg`}
                                                 loading="lazy"
                                             ></img>
-                                            <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center   text-theme '>{obj.channel_name}</h2>
+                                            <h2 className='mt-1 font-inter rounded-b font-medium  text-[12px]  sm:text-md lg:text-lg 2xl:text-2xl  px-1  pb-3 lg:pb-4 w-full text-center   text-theme_text '>{obj.channel_name}</h2>
                                         </div>
                                     </Link>
 
@@ -264,7 +264,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                 }
 
                 <div className="my-4 mb-2 lg:mb-4 2xl:my-6 flex justify-between items-center  rounded  text-white  p-2 px-3  w-full">
-                    <p className='text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme font-poppins font-medium'>🔥 Hot New Videos</p>
+                    <p className='text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme_text font-poppins font-medium'>🔥 Hot New Videos</p>
                 </div>
 
 

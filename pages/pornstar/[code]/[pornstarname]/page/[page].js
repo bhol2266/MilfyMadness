@@ -40,7 +40,7 @@ function Index({ video_collection, pages, pornstarInformation, collageImages, po
     if (router.isFallback) {
         return (
             <div className="flex justify-center mx-auto mt-10 ">
-                <BeatLoader loading size={25} color={'#232b2b'} />
+                <BeatLoader loading size={25} color={'#D1D5DB'} />
             </div>
         )
     }
@@ -121,7 +121,7 @@ function Index({ video_collection, pages, pornstarInformation, collageImages, po
                                 alt={pornstarname}
                                 loading="lazy"
                             />
-                            <h2 className="text-lg lg:text-xl 2xl:text-2xl font-poppins text-theme my-1 pl-1">
+                            <h2 className="text-lg lg:text-xl 2xl:text-2xl font-poppins text-theme_text my-1 pl-1">
                                 {capitalizeFirstLetter(pornstarname.replace(/\+/g, " "))}
                             </h2>
 

@@ -142,7 +142,7 @@ const Videoplayer = () => {
     if (spinnerLoading) {
         return (
             <div className="flex justify-center mx-auto mt-10 h-screen mt-[100px]">
-                <BeatLoader loading size={25} color={'#232b2b'} />
+                <BeatLoader loading size={25} color={'#D1D5DB'} />
             </div>
         );
     }
@@ -150,8 +150,8 @@ const Videoplayer = () => {
     if (serverError) {
         return (
             <div className='my-72 flex flex-col items-center justify-center'>
-                <span className='text-center '> Something went wrong!</span>
-                <button onClick={() => { router.push('/') }} className='mx-auto my-4 bg-theme text-white rounded px-8 py-1 hover:bg-red-700'>Go to Home -&gt;</button>
+                <span className='text-center text-theme_text'> Something went wrong!</span>
+                <button onClick={() => { router.push('/') }} className='mx-auto my-4 bg-theme text-theme_text rounded px-8 py-1 hover:bg-red-700'>Go to Home -&gt;</button>
             </div>
         );
     }
@@ -178,12 +178,12 @@ const Videoplayer = () => {
                         <div className='flex items-center mt-2 space-x-1 lg:space-x-2'>
                             <FilmIcon className='h-[20px] md:h-9 hover:scale-100 text-red-600' />
                             {videolinkQualitiesScreenshots.video_qualities_available.map(quality => (
-                                <p key={quality} className='font-poppins pr-1'>{quality.toUpperCase()}</p>
+                                <p key={quality} className='font-poppins pr-1 text-gray-400'>{quality.toUpperCase()}</p>
                             ))}
                         </div>
                     </div>
 
-                    <h1 className='text-md sm:text-lg font-semibold my-1 text-wrap text-gray-700 md:text-2xl font-inter basicMargin'>{videoDetails.Title}</h1>
+                    <h1 className='text-md sm:text-lg font-semibold my-1 text-wrap text-theme_text md:text-2xl font-inter basicMargin'>{videoDetails.Title}</h1>
 
                     <div className='py-1 rounded overflow-hidden sm:cursor-pointer '>
                         <VideoPlayer
@@ -200,7 +200,7 @@ const Videoplayer = () => {
                         />
                     </div>
 
-                    <p className='font-bold text-semiblack text-[18px] lg:text-[24px] font-manrope basicMargin mt-3'>More videos like this</p>
+                    <p className='font-bold text-theme_text text-[18px] lg:text-[24px] font-manrope basicMargin mt-3'>More videos like this</p>
 
                     {islargeScreen && <Videos data={relatedVideos.slice(4, relatedVideos.length)} />}
                     {!islargeScreen && <Videos data={relatedVideos} />}

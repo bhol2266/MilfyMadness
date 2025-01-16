@@ -28,15 +28,15 @@ const Pagination = ({ data }) => {
 
                 <Link href={`${url}/page/${parseInt(currentPageNumberURL) - 1}`}>
                     <div className={`${parseInt(currentPageNumberURL) === 1 ? "hidden" : ""}`} >
-                        <button className={`scale-90 md:scale-100 font-inter sm:text-med font-bold   sm:mx-4  rounded-lg bg-gray-700 px-6 py-2 text-white hover:button_hover`}>{'<'}</button>
+                        <button className={`scale-90 md:scale-100 font-inter sm:text-med font-bold   sm:mx-4  rounded-lg bg-theme_text px-6 py-2 text-semiblack hover:button_hover`}>{'<'}</button>
                     </div>
                 </Link>
 
 
                 <div className="flex items-center justify-center  rounded py-[1px]">
-                    <p className="font-inter px-4 py-1 rounded text-gray-700  text-md sm:text-lg">{currentPageNumberURL}</p>
-                    <span className="mb-1 scale-125 text-red-600">/</span>
-                    <p className="font-inter px-4 py-1 rounded text-gray-500  text-md sm:text-lg">{pages[1]}</p>
+                    <p className="font-inter px-4 py-1 rounded text-theme_text  text-md sm:text-lg">{currentPageNumberURL}</p>
+                    <span className="mb-1 scale-125 text-theme_green">/</span>
+                    <p className="font-inter px-4 py-1 rounded text-theme_text  text-md sm:text-lg">{pages[1]}</p>
                 </div>
 
 
@@ -44,7 +44,7 @@ const Pagination = ({ data }) => {
 
                 <Link href={`${url}/page/${parseInt(currentPageNumberURL) + 1}`}>
                     <div className={`${parseInt(currentPageNumberURL) === parseInt(pages[1].trim()) ? "hidden" : ""}`} >
-                        <button className={`scale-90 md:scale-100 font-inter sm:text-md font-bold   sm:mx-4  rounded-lg bg-gray-700 px-6 py-2 text-white hover:button_hover ml-1`}>{'>'}</button>
+                        <button className={`scale-90 md:scale-100 font-inter sm:text-md font-bold   sm:mx-4  rounded-lg bg-theme_text px-6 py-2 text-semiblack hover:button_hover ml-1`}>{'>'}</button>
                     </div>
                 </Link>
             </div>

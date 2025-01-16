@@ -112,11 +112,11 @@ function Index() {
             <div className={` mt-4  transition ease-in-out delay-150 `}>
                 <div className='flex my-1  md:w-3/5 md:mx-auto p-2 px-3  border-[1px] border-gray-200 space-x-2 md:space-x-4 xl:px-[50px] rounded-[15px]'  >
                     <SearchIcon className='h-6 w-6 text-gray-400' />
-                    <input className='focus:outline-none flex-grow  font-inter rounded-lg ' type='text' onChange={(event) => { onChangeHandler(event.target.value) }} placeholder='Search pornstar...'></input>
+                    <input className='focus:outline-none flex-grow  font-inter rounded-lg bg-transparent text-theme_text' type='text' onChange={(event) => { onChangeHandler(event.target.value) }} placeholder='Search pornstar...'></input>
                 </div>
             </div>
 
-            <h1 className=' mt-6  ml-1 2xl:my-3 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme font-poppins font-medium w-fit border-b-[3px] border-[#FFBB00]'>Trending Pornstars</h1>
+            <h1 className=' mt-6  ml-1 2xl:my-3 text-left lg:text-left  flex-grow text-2xl lg:text-3xl font-Dmsans text-theme_text font-poppins font-medium w-fit border-b-[3px] border-theme_green'>Trending Pornstars</h1>
 
 
             <div className='mt-1  grid grid-cols-3 p-1 sm:grid-cols-3 gap-2 md:gap-3 lg:gap-4  md:grid-cols-5 lg:grid-cols-6'>

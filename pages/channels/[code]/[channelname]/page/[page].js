@@ -68,7 +68,7 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
     if (router.isFallback) {
         return (
             <div className="flex justify-center mx-auto mt-10 ">
-                <BeatLoader loading size={25} color={'#232b2b'} />
+                <BeatLoader loading size={25} color={'#D1D5DB'} />
             </div>
         )
     }
@@ -127,10 +127,10 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
                                 alt={channel_name}
                                 loading="lazy"
                             />
-                            <h2 className="text-lg lg:text-xl 2xl:text-2xl font-poppins text-theme my-1 pl-1">
+                            <h2 className="text-lg lg:text-xl 2xl:text-2xl font-poppins text-theme_text my-1 pl-1">
                                 {capitalizeFirstLetter(channel_name.replace(/\+/g, " "))}
                             </h2>
-                            <p className="text-xs lg:text-sm 2xl:text-md font-poppins text-gray-700 pl-1">
+                            <p className="text-xs lg:text-sm 2xl:text-md font-poppins text-theme_text pl-1">
                                 Channel by : {channel_by}
                             </p>
                         </div>
@@ -138,8 +138,8 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
                         <div className="mt-auto flex flex-col space-y-4">
                             <Link href={channel_link} rel="nofollow">
                                 <div className="cursor-pointer h-fit flex items-center justify-center space-x-2 border-[1px] border-gray-300 text-semiblack px-3 lg:px-5 p-1.5 rounded-[20px] hover:bg-semiblack hover:text-white group">
-                                    <LinkIcon className="h-4 lg:h-5 text-semiblack group-hover:text-white" />
-                                    <p className="text-sm lg:text-md 2xl:text-lg font-poppins">
+                                    <LinkIcon className="h-4 lg:h-5 text-theme_text group-hover:text-white" />
+                                    <p className="text-sm lg:text-md 2xl:text-lg font-poppins text-theme_text">
                                         Visit
                                     </p>
                                 </div>

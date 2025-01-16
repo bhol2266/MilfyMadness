@@ -72,7 +72,7 @@ function Index() {
             </Head>
 
 
-            <h1 className="text-center lg:text-left text-sm md:text-lg  pb-2 my-1 font-inter">
+            <h1 className="text-center lg:text-left text-theme_text text-sm md:text-lg  pb-2 my-1 font-inter">
                 Porn Video Categories
             </h1>
 

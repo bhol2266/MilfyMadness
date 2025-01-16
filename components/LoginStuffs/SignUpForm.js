@@ -141,7 +141,7 @@ export const SignUpForm = () => {
         <div className="relative bg-semiblack  rounded-lg  px-6 lg:px-0 py-8  ">
 
 
-            <IoIosCloseCircleOutline onClick={() => { setLoginModalVisible(false) }} className="cursor-pointer absolute text-gray-300 text-[32px] lg:text-[34px] right-4 top-4" />
+            <IoIosCloseCircleOutline onClick={() => { setLoginModalVisible(false) }} className="cursor-pointer absolute text-theme_text text-[32px] lg:text-[34px] right-4 top-4" />
 
 
             <div className="flex flex-col justify-center lg:flex-row lg:space-x-8">
@@ -151,25 +151,25 @@ export const SignUpForm = () => {
                     <div className=' p-4 lg:p-8  rounded-lg space-y-2 lg:space-y-4 mb-4 lg:mb-0'>
                         <div className='flex items-center space-x-2 lg:space-x-3   block'>
                             <FaCheckCircle className='text-theme_green text-[14px] lg:text-[16px] flex-shrink-0' />
-                            <p className='text-gray-300 font-inter text-[14px] lg:text-[16px]'>Unlimted Downloads!</p>
+                            <p className='text-theme_text font-inter text-[14px] lg:text-[16px]'>Unlimted Downloads!</p>
                         </div>
 
                         <div className='flex items-center space-x-2 lg:space-x-3  block'>
                             <FaCheckCircle className='text-theme_green text-[14px] lg:text-[16px] flex-shrink-0' />
-                            <p className='text-gray-300 font-inter text-[14px] lg:text-[16px]'>Video recommendations curated for you</p>
+                            <p className='text-theme_text font-inter text-[14px] lg:text-[16px]'>Video recommendations curated for you</p>
                         </div>
                         <div className='flex items-center space-x-2 lg:space-x-3  block'>
                             <FaCheckCircle className='text-theme_green text-[14px] lg:text-[16px] flex-shrink-0' />
-                            <p className='text-gray-300 font-inter text-[14px] lg:text-[16px]'>Subscribe to channels and pornstars</p>
+                            <p className='text-theme_text font-inter text-[14px] lg:text-[16px]'>Subscribe to channels and pornstars</p>
                         </div>
                         <div className='flex items-center space-x-2 lg:space-x-3  block'>
                             <FaCheckCircle className='text-theme_green text-[14px] lg:text-[16px] flex-shrink-0' />
-                            <p className='text-gray-300 font-inter text-[14px] lg:text-[16px]'>Create and enjoy playlists</p>
+                            <p className='text-theme_text font-inter text-[14px] lg:text-[16px]'>Create and enjoy playlists</p>
                         </div>
 
                     </div>
 
-                    <p className='mb-6 font-inter text-gray-300 text-center text font-dancing text-2xl'>Unleash your desires!   </p>
+                    <p className='mb-6 font-inter text-theme_text text-center text font-dancing text-2xl'>Unleash your desires!   </p>
                     <img src='/logo.png' alt="chutlunds" className='hidden lg:flex h-[350px] mx-auto absolute -bottom-[180px] ' />
 
 
@@ -179,7 +179,7 @@ export const SignUpForm = () => {
                     <form className="space-y-3" action="#" method="POST" onSubmit={handleSubmit}>
                         <div className="flex space-x-3 w-full">
                             <div className='w-1/2'>
-                                <label htmlFor="first-name" className="text-sm font-medium leading-6 text-gray-300">First Name</label>
+                                <label htmlFor="first-name" className="text-sm font-medium leading-6 text-theme_text">First Name</label>
                                 <div className="mt-2">
                                     <input
                                         id="first-name"
@@ -188,13 +188,13 @@ export const SignUpForm = () => {
                                         autoComplete="given-name"
                                         required
                                         placeholder='First Name'
-                                        className="w-full text-xs font-inter rounded-lg bg-transparent py-2 px-2 text-gray-300 border-[1px] border-gray-300 placeholder:text-gray-400 sm:text-sm"
+                                        className="w-full text-xs font-inter rounded-lg bg-transparent py-2 px-2 text-theme_text border-[1px] border-gray-300 placeholder:text-gray-400 sm:text-sm"
                                     />
                                 </div>
                             </div>
 
                             <div className='w-1/2'>
-                                <label htmlFor="last-name" className="text-sm font-medium leading-6 text-gray-300">Last Name</label>
+                                <label htmlFor="last-name" className="text-sm font-medium leading-6 text-theme_text">Last Name</label>
                                 <div className="mt-2">
                                     <input
                                         id="last-name"
@@ -203,7 +203,7 @@ export const SignUpForm = () => {
                                         autoComplete="family-name"
                                         required
                                         placeholder='Last Name'
-                                        className="w-full text-xs font-inter rounded-lg bg-transparent py-2 px-2 text-gray-300 border-[1px] border-gray-300 placeholder:text-gray-400 sm:text-sm"
+                                        className="w-full text-xs font-inter rounded-lg bg-transparent py-2 px-2 text-theme_text border-[1px] border-gray-300 placeholder:text-gray-400 sm:text-sm"
                                     />
                                 </div>
                             </div>
@@ -211,7 +211,7 @@ export const SignUpForm = () => {
 
                         <div className="flex space-x-3 w-full ">
                             <div className='w-2/3'>
-                                <label htmlFor="email" className="text-sm font-medium leading-6 text-gray-300">Email address</label>
+                                <label htmlFor="email" className="text-sm font-medium leading-6 text-theme_text">Email address</label>
                                 <div className="mt-2">
                                     <input
                                         id="email"
@@ -220,13 +220,13 @@ export const SignUpForm = () => {
                                         autoComplete="email"
                                         required
                                         placeholder='Email'
-                                        className="w-full text-xs font-inter rounded-lg bg-transparent py-2 px-2 text-gray-300 border-[1px] border-gray-300 placeholder:text-gray-400 sm:text-sm"
+                                        className="w-full text-xs font-inter rounded-lg bg-transparent py-2 px-2 text-theme_text border-[1px] border-gray-300 placeholder:text-gray-400 sm:text-sm"
                                     />
                                 </div>
                             </div>
 
                             <div className='w-1/3'>
-                                <label htmlFor="password" className="text-sm font-medium leading-6 text-gray-300">Create Password</label>
+                                <label htmlFor="password" className="text-sm font-medium leading-6 text-theme_text">Create Password</label>
                                 <div className="mt-2">
                                     <input
                                         id="password"
@@ -236,7 +236,7 @@ export const SignUpForm = () => {
                                         required
                                         minLength={6} // Set the minimum length here
                                         placeholder='Password'
-                                        className="w-full text-xs font-inter rounded-lg bg-transparent py-2 px-2 text-gray-300 border-[1px] border-gray-300 placeholder:text-gray-400 sm:text-sm"
+                                        className="w-full text-xs font-inter rounded-lg bg-transparent py-2 px-2 text-theme_text border-[1px] border-gray-300 placeholder:text-gray-400 sm:text-sm"
                                     />
                                 </div>
                             </div>
@@ -250,7 +250,7 @@ export const SignUpForm = () => {
                                         <ClipLoader color="#232b2b" size={25} />
                                     </div>
                                 }
-                                {!loading && <p className=" text-sm font-inter leading-6 text-gray-300 font-inter font-semibold"> Join Xhamster!</p>}
+                                {!loading && <p className=" text-sm font-inter leading-6 text-theme_text font-inter font-semibold"> Join Xhamster!</p>}
                             </button>
                         </div>
                     </form>
@@ -259,7 +259,7 @@ export const SignUpForm = () => {
 
 
 
-                    <p className="my-3 text-center text-sm text-gray-300">
+                    <p className="my-3 text-center text-sm text-theme_text">
                         Already have an account?
                         <span onClick={() => { loginHere() }} className="underline cursor-pointer text-theme_green"> Login here</span>
                     </p>
@@ -269,7 +269,7 @@ export const SignUpForm = () => {
                     <div className="w-full flex items-center justify-center my-2">
                         <hr className="flex-grow border-gray-300 my-2 " />
 
-                        <p className='my-4 w-fit mx-2 font-inter text-gray-300 text-xs'>  or continue with</p>
+                        <p className='my-4 w-fit mx-2 font-inter text-theme_text text-xs'>  or continue with</p>
 
                         <hr className="flex-grow border-gray-300 my-2" />
                     </div>
@@ -277,12 +277,12 @@ export const SignUpForm = () => {
                     <div className="w-full flex mb-5  mx-auto  space-x-4 ">
                         <div onClick={() => SignInButton('google')} className="group hover:bg-slate-200 w-full  flex items-center justify-center space-x-2 cursor-pointer py-1.5  rounded-md border-[1px] border-gray-200">
                             <img src='/login/google.png' className='lg:h-[38px] object-contain h-[22px] w-[22px] cursor-pointer ml-1' alt="Google" />
-                            <h2 className=' font-inter text-gray-300 text-[11px] lg:text-[14px] group-hover:text-gray-300'>Google</h2>
+                            <h2 className=' font-inter text-theme_text text-[11px] lg:text-[14px] group-hover:text-theme_text'>Google</h2>
                         </div>
 
                         <div onClick={() => SignInButton('google')} className="group hover:bg-slate-200 w-full flex items-center justify-center space-x-2 cursor-pointer py-1.5  rounded-md border-[1px] border-gray-200">
                             <img src='/login/facebook.png' className='lg:h-[40px] object-contain h-[24px] w-[24px] cursor-pointer ml-1' alt="Facebook" />
-                            <h2 className=' font-inter text-gray-300 text-[11px] lg:text-[14px] group-hover:text-gray-300'>Facebook</h2>
+                            <h2 className=' font-inter text-theme_text text-[11px] lg:text-[14px] group-hover:text-theme_text'>Facebook</h2>
                         </div>
                     </div>
 
@@ -290,7 +290,7 @@ export const SignUpForm = () => {
 
 
                     <div className=''>
-                        <p className='text-xs text-center text-gray-300 font-inter whitespace-nowrap overflow-hidden text-ellipsis'>
+                        <p className='text-xs text-center text-theme_text font-inter whitespace-nowrap overflow-hidden text-ellipsis'>
                             By Registering, I certify that I am over 18 years old and I agree to
                         </p>
                         <Link href="/terms">

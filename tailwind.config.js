@@ -40,6 +40,7 @@ module.exports = {
         'theme_red': '#ef4444',
         'theme_green': '#AAFF00',
         'theme_yellow': '#E4D00A',
+        'theme_text': '#D1D5DB', //gray-300
 
       },
       fontFamily: {

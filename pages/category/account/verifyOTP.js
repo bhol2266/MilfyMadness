@@ -1,4 +1,4 @@
-import { SignUpFormOTP } from "../../components/LoginStuffs/SignUpFormOTP";
+import { SignUpFormOTP } from "../../../components/LoginStuffs/SignUpFormOTP";
 import Head from "next/head";
 
 const VerifyOTP = () => {

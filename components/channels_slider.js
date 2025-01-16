@@ -32,13 +32,13 @@ function Channels_slider({ trendingChannels, trendingDataType }) {
                         <div className='flex flex-col justify-center items-center mx-1'>
                             <div className='w-[90px]'>
                                 <img
-                                    className='shadow-md rounded-full object-cover aspect-square border-[1px] border-gray-50'
+                                    className='shadow-md rounded-full object-cover aspect-square border-[1px] border-gray-700'
                                     src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${normalizedChannelName}.jpg`}
                                     loading="lazy"
                                     alt={channelObj.channel_name}
                                 />
                             </div>
-                            <h2 className='text-xs text-center font-poppins text-gray-300 font-semibold mt-1 whitespace-nowrap'>
+                            <h2 className='text-xs text-center font-poppins text-theme_text font-semibold mt-1 whitespace-nowrap'>
                                 {channelObj.channel_name.toUpperCase()}
                             </h2>
                         </div>

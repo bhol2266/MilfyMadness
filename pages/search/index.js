@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head'
 import PopunderAds from '../../components/Ads/Popunder';
 import { SearchIcon } from '@heroicons/react/outline';
+import { FaTag } from "react-icons/fa6";
 
 function Search({ tags }) {
 
@@ -85,7 +86,7 @@ function Search({ tags }) {
                 <title>Search Porn Videos, Discover Free XXX Movies Online | xHamster</title>
                 <meta name="description"
                     content="xHamster is known as one of the most advanced porn video search engines, offering a wide variety of full-length hardcore sex movies, short XXX video clips, and high-quality adult tube scenes. Whatever type of porn video you desire, you can count on xHamster to deliver exactly what you're looking for!" />
-                G
+               
                 <meta property="og:title" content="Search Porn Videos, Discover Free XXX Movies Online | xHamster" />
                 <meta property="og:description" content="xHamster is known as one of the most advanced porn video search engines, offering a wide variety of full-length hardcore sex movies, short XXX video clips, and high-quality adult tube scenes. Whatever type of porn video you desire, you can count on xHamster to deliver exactly what you're looking for!" />
                 <meta name="twitter:title" content="Search Porn Videos, Discover Free XXX Movies Online | xHamster" />
@@ -100,21 +101,21 @@ function Search({ tags }) {
             <div className={` mt-4  transition ease-in-out delay-150 `}>
                 <div className='flex my-1  md:w-3/5 md:mx-auto p-2 px-3  border-[1px] border-gray-200 space-x-2 md:space-x-4 xl:px-[50px] rounded-[15px]'  >
                     <SearchIcon className='h-6 w-6 text-gray-400' />
-                    <input className='focus:outline-none flex-grow  font-inter rounded-lg ' type='text' onChange={searchTag} placeholder='Search your keyword'></input>
+                    <input className='focus:outline-none flex-grow  font-inter rounded-lg bg-transparent text-theme_text' type='text' onChange={searchTag} placeholder='Search your keyword'></input>
                 </div>
             </div>
 
 
             <div className='flex items-center space-x-2 mt-4'>
-                <img alt='tag' src='/login/label.png' className='h-[25px] w-[25px]' />
-                <h1 className='text-lg font-bold md:text-2xl font-poppins'> Popular Search Tags</h1>
+                <FaTag  className='h-[25px] w-[25px] text-theme_text' />
+                <h1 className='text-lg font-bold md:text-2xl font-poppins text-theme_text'> Popular Search Tags</h1>
             </div>
 
             <div className='my-2 flex flex-wrap'>
                 {tagsArray.map(keyword => {
                     return (
                         <Link key={keyword} href={`/search/${keyword.trim().replace(/ /g, "+")}`}>
-                            <div className='text-sm border-[1px] border-[#9499A8] text-semiblack px-2 py-1 rounded-lg my-1 mx-1.5  hover:bg-semiblack font-poppins hover:text-white md:text-lg'>
+                            <div className='text-sm border-[1px] border-[#9499A8] text-theme_text px-2 py-1 rounded-lg my-1 mx-1.5  hover:bg-gray-300 font-poppins hover:text-white md:text-lg'>
                                 <h2 className='text-center'>{keyword}</h2>
                             </div>
                         </Link>

@@ -31,13 +31,13 @@ function Pornstar_slider({ trendingPornstars }) {
                         <div className='flex flex-col justify-center items-center mx-1'>
                             <div className='w-[90px]'>
                                 <img
-                                    className='shadow-md object-contain rounded-[5px] border-[1px] border-gray-50'
+                                    className='shadow-md object-contain rounded-[5px] '
                                     src={pornstarObj.thumbnail}
                                     loading="lazy"
                                     alt={pornstarObj.Name}
                                 />
                             </div>
-                            <h2 className='text-xs text-center font-poppins text-gray-300 font-semibold mt-1 whitespace-nowrap'>
+                            <h2 className='text-xs text-center font-poppins text-theme_text font-semibold mt-1 whitespace-nowrap'>
                                 {pornstarObj.Name.toUpperCase()}
                             </h2>
                         </div>

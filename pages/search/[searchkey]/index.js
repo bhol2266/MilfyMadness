@@ -33,7 +33,7 @@ function Search({ video_collection, pages }) {
   if (router.isFallback || !searchkey) {
     return (
       <div className="flex justify-center mx-auto mt-10 ">
-        <BeatLoader loading size={25} color={'#232b2b'} />
+        <BeatLoader loading size={25} color={'#D1D5DB'} />
       </div>
     );
   }

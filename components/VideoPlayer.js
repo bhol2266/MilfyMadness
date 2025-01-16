@@ -213,15 +213,15 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
                             <div className='flex items-center space-x-1'>
                                 <ClockIcon className='h-6 hover:scale-100 text-red-700 md:h-9' />
-                                <p className=' font-bold'>{video_details.duration.substring(0, 5)}</p>
+                                <p className=' font-bold text-theme_text'>{video_details.duration.substring(0, 5)}</p>
                             </div>
                             <div className='flex items-center space-x-1'>
                                 <EyeIcon className="h-6 text-blue-600  md:h-9" />
-                                <p className=' font-bold'>{video_details.views.length > 1 ? video_details.views : "46513"}</p>
+                                <p className=' font-bold text-theme_text'>{video_details.views.length > 1 ? video_details.views : "46513"}</p>
                             </div>
                             <div className='flex items-center space-x-1'>
                                 <ThumbUpIcon className="h-6 text-green-500  md:h-9" />
-                                <p className=' font-bold'>{video_details.likedPercent}</p>
+                                <p className=' font-bold text-theme_text'>{video_details.likedPercent}</p>
                             </div>
 
 
@@ -231,11 +231,11 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
                             {/* <DownloadIcon className='h-7 text-gray-700' /> */}
 
-                            <button onClick={download} className='font-inter text-[12px] lg:text-lg px-2 lg:px-4 py-1 lg:py-1.5 bg-red-500 rounded-md text-white text-center lg:mt-1 navbar'>Download</button>
+                            <button onClick={download} className='font-inter text-[12px] lg:text-lg px-2 lg:px-4 py-1 lg:py-1.5 bg-theme_green rounded-md text-semiblack text-center lg:mt-1 navbar'>Download</button>
                             <Menu as="div" className="relative  text-left">
                                 <div className=' w-fit relative '>
                                     <Menu.Button className="flex items-center space-x-1">
-                                        <CogIcon className="h-9 text-gray-600 m-1  duration-300" />
+                                        <CogIcon className="h-9 text-theme_text m-1  duration-300" />
                                         <p className={`${Quality === '720p' || Quality === '1080p' || Quality === '4k' ? "" : "hidden"}  text-xs bg-red-500 rounded text-white absolute top-1 right-0`}>HD</p>
                                     </Menu.Button>
                                 </div>
@@ -294,13 +294,13 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
                         <div className='flex  items-center mb-2 '>
 
-                            <span className="font-inter text-sm lg:text-md 2xl:text-xl font-bold whitespace-nowrap">Skip to scene:</span>
+                            <span className="text-theme_text font-inter text-sm lg:text-md 2xl:text-xl font-bold whitespace-nowrap">Skip to scene:</span>
 
                             <div className='flex flex-wrap  ml-2'>
                                 {
                                     positionsArray.map(obj => {
                                         return (
-                                            <p onClick={() => switchToScene(obj)} key={obj.positionName} className='text-xs md:text-sm mr-1  mt-1 cursor-pointer hover:bg-gray-900 rounded px-[5px] py-[2px]  font-inter text-white bg-pink-600'>{obj.positionName}</p>
+                                            <p onClick={() => switchToScene(obj)} key={obj.positionName} className='text-xs md:text-sm mr-1  mt-1 cursor-pointer hover:bg-gray-400 rounded px-[5px] py-[2px]  font-inter text-semiblack bg-gray-200'>{obj.positionName}</p>
 
                                         )
                                     })
@@ -318,7 +318,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
                                     return (
                                         <Link key={key} href={`/search/${key.trim()}`} passHref>
-                                            <p className="text-xs border-[1px] border-[#9499A8] text-semiblack px-2 py-1 rounded-lg m-1 inline-block lg:text-sm hover:bg-gray-300">
+                                            <p className="text-xs border-[1px] border-[#9499A8] text-theme_text px-2 py-1 rounded-lg m-1 inline-block lg:text-sm hover:bg-gray-300 hover:text-semiblack">
                                                 {key}
                                             </p>
                                         </Link>
@@ -353,7 +353,7 @@ const VideoPlayer = ({ video_details, Qualitys, videolink_qualities_screenshots,
 
                     {/* ScreenShots  */}
 
-                    <div onClick={openScreenShotLayout} className='2xl:w-1/4 lg:w-1/3 sm:w-1/2  flex items-center rounded-[15px] hover:bg-gray-300 text-white border-gray-400 border-[1px]  justify-between py-0.5 px-2 pr-3   rounded cursor-pointer    md:space-x-4'>
+                    <div onClick={openScreenShotLayout} className='2xl:w-1/4 lg:w-1/3 sm:w-1/2  flex items-center rounded-[15px] bg-gray-300 hover:bg-gray-400 text-white border-gray-400 border-[1px]  justify-between py-0.5 px-2 pr-3   rounded cursor-pointer    md:space-x-4'>
 
                         <div className='flex items-center'>
 

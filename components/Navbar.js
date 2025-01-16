@@ -204,7 +204,7 @@ function Navbar() {
                                 <div className='flex items-center'>
 
                                     <div onClick={handleSearchIconClick} className=' lg:hidden mr-2 cursor-pointer p-2  hover:bg-button  rounded-md '>
-                                        <SearchIcon className='h-6 w-6 text-gray-300' />
+                                        <SearchIcon className='h-6 w-6 text-theme_text' />
                                     </div>
 
                                     <Menu as="div" className="relative mx-1 mr-2">
@@ -251,14 +251,14 @@ function Navbar() {
 
                                                 {user &&
                                                     <Menu.Item>
-                                                        <button onClick={signOut_method} className='text-gray-300 w-[150px] h-[30px] text-[11px] font-inter px-[25px] py-[7px] bg-button hover:bg-button_hover rounded mt-[8px] mx-auto'>
+                                                        <button onClick={signOut_method} className='text-theme_text w-[150px] h-[30px] text-[11px] font-inter px-[25px] py-[7px] bg-button hover:bg-button_hover rounded mt-[8px] mx-auto'>
                                                             Sign Out
                                                         </button>
                                                     </Menu.Item>
                                                 }
 
                                                 <Menu.Item>
-                                                    <h2 className='cursor-pointer text-[11px] font-DMsans text-gray-300  w-fit mx-auto mb-28px mt-[14px]'>Need Help ?</h2>
+                                                    <h2 className='cursor-pointer text-[11px] font-DMsans text-theme_text  w-fit mx-auto mb-28px mt-[14px]'>Need Help ?</h2>
                                                 </Menu.Item>
 
                                             </Menu.Items>
@@ -301,7 +301,7 @@ function Navbar() {
                                                 <Disclosure.Button
                                                     as="a"
                                                     className={classNames(
-                                                        item.current ? 'bg-button_hover text-white font-semibold' : 'text-gray-300 hover:bg-button_hover ',
+                                                        item.current ? 'bg-button_hover text-white font-semibold' : 'text-theme_text hover:bg-button_hover ',
                                                         'block px-3 py-2 rounded-md text-base font-medium'
                                                     )}
                                                     aria-current={item.current ? 'page' : undefined}
@@ -370,7 +370,7 @@ function Navbar() {
             <div className='flex justify-around items-center lg:hidden font-arial shadow-lg mb-2'>
                 <Link href='/' legacyBehavior>
                     <a
-                        className={`sm:text-xl xl:text-[28px] text-md text-gray-300 text-center p-1 border-b-[3px] ${currentPath === '/' ? 'border-theme_green' : 'hover:border-theme_green border-transparent'}`}
+                        className={`sm:text-xl xl:text-[28px] text-md text-theme_text text-center p-1 border-b-[3px] ${currentPath === '/' ? 'border-theme_green' : 'hover:border-theme_green border-transparent'}`}
                         rel="dofollow"
                     >
                         Home
@@ -379,7 +379,7 @@ function Navbar() {
 
                 <Link href='/category' legacyBehavior>
                     <a
-                        className={`sm:text-xl xl:text-[28px] text-md text-gray-300 text-center p-1 border-b-[3px] ${currentPath === '/category' ? 'border-theme_green' : 'hover:border-theme_green border-transparent'}`}
+                        className={`sm:text-xl xl:text-[28px] text-md text-theme_text text-center p-1 border-b-[3px] ${currentPath === '/category' ? 'border-theme_green' : 'hover:border-theme_green border-transparent'}`}
                         rel="dofollow"
                     >
                         Categories
@@ -393,7 +393,7 @@ function Navbar() {
                     >
                         <MdLiveTv className='h-5 w-5 text-gray-400' />
 
-                        <span className={`sm:text-xl xl:text-[28px] text-md text-gray-300 text-center mb-0`}>
+                        <span className={`sm:text-xl xl:text-[28px] text-md text-theme_text text-center mb-0`}>
                             Channels
                         </span>
                     </a>
@@ -538,7 +538,7 @@ function Navbar() {
                         return (
                             <Link href={item.href} legacyBehavior key={item.name}>
                                 <a rel="dofollow"
-                                    className={`text-xl 2xl:text-2xl font-medium text-gray-300 cursor-pointer p-1 border-b-4 
+                                    className={`text-xl 2xl:text-2xl font-medium text-theme_text cursor-pointer p-1 border-b-4 
                     ${isActive ? 'border-theme_green' : 'border-transparent hover:border-theme_green'}
                     transition-colors duration-300`}
                                 >
