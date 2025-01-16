@@ -72,7 +72,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/logo.png" />
-        <meta name="google-site-verification" content="3xvgXxQ4cIIVGrkT06JZdF2kjYXTdcZKCeZYLIBBMEQ" />
+        <meta name="google-site-verification" content="OwcdmtgnWuCidVEu_oPS6eQhmgssoZVQXXPv-BGHVRE" />
         <meta name="clckd" content="989abd1ff7e1399f3e4fc8bef01007d3" />
         <meta name="6a97888e-site-verification" content="a08d328f200c660d81b1e7a9240a01d5" />      </Head>
 

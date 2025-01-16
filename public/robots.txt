@@ -2,9 +2,9 @@ User-agent: *
 Disallow: /pornstar/query
 Disallow: /search/query   
 Disallow: /category/query
-Disallow: http://xhamster.gg/
-Disallow: https://xhamster.gg/
+Disallow: http://MilfyMadness.com/
+Disallow: https://MilfyMadness.com/
 Allow: /
 
 
-Sitemap: https://www.xhamster.gg/sitemap.xml
+Sitemap: https://www.MilfyMadness.com/sitemap.xml
