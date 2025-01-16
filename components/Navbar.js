@@ -163,7 +163,7 @@ function Navbar() {
 
     return (
 
-        <div className='font-inter  shadow'>
+        <div className='font-inter  shadow bg-black'>
 
             <div className=" p-2  lg:hidden">
 
@@ -175,8 +175,11 @@ function Navbar() {
                                 <div className='flex items-center space-x-1' >
 
                                     <Link href='/'>
-                                        <img src='/logo.png' alt="logo" className='w-[200px]' />
+                                        <img src='/logo.png' alt="logo" className='w-[50px] h-[50px] object-cover object-top' />
                                     </Link>
+
+                                    <img src='/logo_text.png' alt="logo" className='w-fit h-[30px] mt-2' />
+
                                     {location &&
                                         <div className='cursor-pointer' onClick={handleClickFlag}>
                                             <ReactCountryFlag
@@ -200,8 +203,8 @@ function Navbar() {
 
                                 <div className='flex items-center'>
 
-                                    <div onClick={handleSearchIconClick} className=' lg:hidden mr-2 cursor-pointer p-2  hover:bg-button rounded-md '>
-                                        <SearchIcon className='h-6 w-6 ' />
+                                    <div onClick={handleSearchIconClick} className=' lg:hidden mr-2 cursor-pointer p-2  hover:bg-button  rounded-md '>
+                                        <SearchIcon className='h-6 w-6 text-gray-300' />
                                     </div>
 
                                     <Menu as="div" className="relative mx-1 mr-2">
@@ -227,13 +230,13 @@ function Navbar() {
                                             leaveFrom="transform opacity-100 scale-100"
                                             leaveTo="transform opacity-0 scale-95"
                                         >
-                                            <Menu.Items className="flex flex-col border-gray-200 border-[1px] justify-start bg-white origin-top-right absolute -right-[50px] lg:-right-[125px] mt-3  w-[200px] rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 focus:outline-none z-20 pb-4">
+                                            <Menu.Items className="flex flex-col  justify-start bg-semiblack origin-top-right absolute -right-[50px] lg:-right-[125px] mt-3  w-[200px] rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 focus:outline-none z-20 pb-4">
 
 
 
                                                 {!user &&
                                                     <Menu.Item>
-                                                        <button onClick={() => setLoginModalVisible(true)} className='block_popunder text-semiblack w-[150px] h-[30px] text-[11px] font-inter px-[25px] py-[7px] bg-button hover:bg-button_hover rounded mt-[24px] mx-auto'>
+                                                        <button onClick={() => setLoginModalVisible(true)} className='block_popunder text-white w-[150px] h-[30px] text-[11px] font-inter px-[25px] py-[7px] bg-button hover:bg-button_hover rounded mt-[24px] mx-auto'>
                                                             Sign In / Sign Up
                                                         </button>
                                                     </Menu.Item>
@@ -248,14 +251,14 @@ function Navbar() {
 
                                                 {user &&
                                                     <Menu.Item>
-                                                        <button onClick={signOut_method} className='text-semiblack w-[150px] h-[30px] text-[11px] font-inter px-[25px] py-[7px] bg-button hover:bg-button_hover rounded mt-[8px] mx-auto'>
+                                                        <button onClick={signOut_method} className='text-gray-300 w-[150px] h-[30px] text-[11px] font-inter px-[25px] py-[7px] bg-button hover:bg-button_hover rounded mt-[8px] mx-auto'>
                                                             Sign Out
                                                         </button>
                                                     </Menu.Item>
                                                 }
 
                                                 <Menu.Item>
-                                                    <h2 className='cursor-pointer text-[11px] font-DMsans text-semiblack  w-fit mx-auto mb-28px mt-[14px]'>Need Help ?</h2>
+                                                    <h2 className='cursor-pointer text-[11px] font-DMsans text-gray-300  w-fit mx-auto mb-28px mt-[14px]'>Need Help ?</h2>
                                                 </Menu.Item>
 
                                             </Menu.Items>
@@ -263,7 +266,7 @@ function Navbar() {
                                     </Menu>
 
 
-                                    <Disclosure.Button className="lg:hidden items-center justify-center rounded-md text-semiblack hover:bg-button p-2">
+                                    <Disclosure.Button className="lg:hidden items-center justify-center rounded-md text-white hover:bg-button p-2">
                                         <span className="sr-only">Open main menu</span>
                                         {open ? (
                                             <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -298,7 +301,7 @@ function Navbar() {
                                                 <Disclosure.Button
                                                     as="a"
                                                     className={classNames(
-                                                        item.current ? 'bg-gray-200 text-semiblack font-semibold' : 'text-gray-600 hover:bg-gray-200 ',
+                                                        item.current ? 'bg-button_hover text-white font-semibold' : 'text-gray-300 hover:bg-button_hover ',
                                                         'block px-3 py-2 rounded-md text-base font-medium'
                                                     )}
                                                     aria-current={item.current ? 'page' : undefined}
@@ -323,7 +326,7 @@ function Navbar() {
                                 value={searchKey}
                                 onChange={getSuggestedTags}
                                 ref={searchInputref}
-                                className="w-full h-[35px] px-4 text-sm text-semiblack border-[0.8px] border-semiblack rounded-[15px] bg-transparent outline-none"
+                                className="w-full h-[35px] px-4 text-sm text-white border-[0.8px] border-semiblack rounded-[15px] bg-transparent outline-none"
                                 type="text"
                                 placeholder="Search your favourite videos"
                             />
@@ -331,7 +334,7 @@ function Navbar() {
                         <div className="w-[18%]">
                             <button
                                 type="submit"
-                                className="w-full p-2 text-sm text-semiblack bg-button rounded-[15px] hover:bg-button_hover"
+                                className="w-full p-2 text-sm text-white bg-button rounded-[15px] hover:bg-button_hover"
                             >
                                 Search
                             </button>
@@ -346,7 +349,7 @@ function Navbar() {
                                 return (
                                     <div key={tag} onClick={() => {
                                         setsearchKey(tag); setshowSuggested(false); router.push(`/search/${tag.trim()}`)
-                                    }} className='flex items-center space-x-2 p-2  cursor-pointer hover:bg-gray-200 pl-4 hover:rounded-[15px] hover:text-semiblack text-semiblack'>
+                                    }} className='flex items-center space-x-2 p-2  cursor-pointer hover:bg-gray-200 pl-4 hover:rounded-[15px] hover:text-white text-white'>
                                         {/* <img src='/login/history.png' className='h-[20px]' /> */}
                                         <p className='text-[13px] fontinter  '>{tag}</p>
 
@@ -367,7 +370,7 @@ function Navbar() {
             <div className='flex justify-around items-center lg:hidden font-arial shadow-lg mb-2'>
                 <Link href='/' legacyBehavior>
                     <a
-                        className={`sm:text-xl xl:text-[28px] text-md text-semiblack text-center p-1 border-b-[3px] ${currentPath === '/' ? 'border-theme_red' : 'hover:border-theme_red border-transparent'}`}
+                        className={`sm:text-xl xl:text-[28px] text-md text-gray-300 text-center p-1 border-b-[3px] ${currentPath === '/' ? 'border-theme_green' : 'hover:border-theme_green border-transparent'}`}
                         rel="dofollow"
                     >
                         Home
@@ -376,7 +379,7 @@ function Navbar() {
 
                 <Link href='/category' legacyBehavior>
                     <a
-                        className={`sm:text-xl xl:text-[28px] text-md text-semiblack text-center p-1 border-b-[3px] ${currentPath === '/category' ? 'border-theme_red' : 'hover:border-theme_red border-transparent'}`}
+                        className={`sm:text-xl xl:text-[28px] text-md text-gray-300 text-center p-1 border-b-[3px] ${currentPath === '/category' ? 'border-theme_green' : 'hover:border-theme_green border-transparent'}`}
                         rel="dofollow"
                     >
                         Categories
@@ -385,12 +388,12 @@ function Navbar() {
 
                 <Link href='/channels' legacyBehavior>
                     <a
-                        className={`group flex items-center justify-center space-x-1 -mb-1 pb-1 border-b-[3px] ${currentPath === '/channels' ? 'border-theme_red' : 'hover:border-theme_red border-transparent'}`}
+                        className={`group flex items-center justify-center space-x-1 -mb-1 pb-1 border-b-[3px] ${currentPath === '/channels' ? 'border-theme_green' : 'hover:border-theme_green border-transparent'}`}
                         rel="dofollow"
                     >
-                        <MdLiveTv className='h-5 w-5 text-gray-700' />
-                       
-                        <span className={`sm:text-xl xl:text-[28px] text-md text-semiblack text-center mb-0`}>
+                        <MdLiveTv className='h-5 w-5 text-gray-400' />
+
+                        <span className={`sm:text-xl xl:text-[28px] text-md text-gray-300 text-center mb-0`}>
                             Channels
                         </span>
                     </a>
@@ -416,12 +419,24 @@ function Navbar() {
 
                     <div className='flex items-center space-x-1 md:space-x-3  ml-2' >
 
-                        <Link href='/'>
-                            <img src='/logo.png' alt="logo" className='w-[250px]' />
-                        </Link>
+                        <img className="ml-[90px] w-[180px]" src='/logo_text.png' alt='logo_text'   ></img>
+
+                        <a target="_blank" href={countryBlocked ? "https://go.xxxiijmp.com/?userId=9ea31ff27db3b7242eabcc2d26ac0eaf38f093c68528e70c2e7f5a72df55c42e" : "https://chaturbate.com/in/?tour=LQps&campaign=3v7pk&track=default&room=ukdevelopers"} rel="noopener noreferrer">
+                            <div className='ml-[30px] flex  items-center  cursor-pointer hover:scale-105  transition-all space-x-2  xl:flex'>
+                                <img
+                                    src='/livesex.png'
+                                    height={35}
+                                    width={35}
+                                    alt='livesex'
+                                ></img>
+                                <p className='font-bold text-white'>Live Sex</p>
+                            </div>
+                        </a>
+
+
                         {location &&
 
-                            <div className='cursor-pointer pt-1' onClick={handleClickFlag}>
+                            <div className='cursor-pointer  ml-[80px]' onClick={handleClickFlag}>
                                 <ReactCountryFlag
                                     svg
                                     countryCode={location.countryCode}
@@ -434,20 +449,6 @@ function Navbar() {
                             </div>
                         }
 
-
-
-                        <a target="_blank" href={countryBlocked ? "https://go.xxxiijmp.com/?userId=9ea31ff27db3b7242eabcc2d26ac0eaf38f093c68528e70c2e7f5a72df55c42e" : "https://chaturbate.com/in/?tour=LQps&campaign=3v7pk&track=default&room=ukdevelopers"} rel="noopener noreferrer">
-                            <div className='pl-2  flex  items-center 
-                             cursor-pointer hover:scale-105  transition-all space-x-2 hidden xl:flex'>
-                                <img
-                                    src='/livesex.png'
-                                    height={35}
-                                    width={35}
-                                    alt='livesex'
-                                ></img>
-                                <p className='font-bold text-semiblack'>Live Sex</p>
-                            </div>
-                        </a>
                     </div>
 
 
@@ -457,23 +458,23 @@ function Navbar() {
 
                         <div className='relative select-none'>
                             <div className="flex  items-center w-[250px] lg:w-[300px] 2xl:w-[700px]  border-[0.8px] border-semiblack rounded-[30px] p-0.5 2xl:p-1 2xl:px-4 px-4">
-                                <SearchIcon className="h-5 2xl:h-6 text-semiblack" />
+                                <SearchIcon className="h-5 2xl:h-6 text-white" />
                                 <input
                                     value={searchKey}
                                     onChange={getSuggestedTags}
                                     ref={searchInputref}
-                                    className="flex-grow bg-transparent outline-none rounded-[15px] pl-2 h-10 text-[16px] text-semiblack"
+                                    className="flex-grow bg-transparent outline-none rounded-[15px] pl-2 h-10 text-[16px] text-white"
                                     type="text"
                                     placeholder="Search your favourite videos"
                                 />
                             </div>
                             {showSuggested &&
-                                <div className=' rounded-[20px] absolute top-[55px] left-0 right-0 max-h-[300px] z-50 overflow-hidden overflow-scroll scrollbar-hide bg-white'>
+                                <div className=' rounded-[20px] absolute top-[55px] left-0 right-0 max-h-[300px] z-50  overflow-scroll scrollbar-hide bg-semiblack'>
                                     {tags.map(tag => {
                                         return (
                                             <div key={tag} onClick={() => {
                                                 setsearchKey(tag); setshowSuggested(false); router.push(`/search/${tag.trim()}`)
-                                            }} className='flex items-center space-x-2 py-2  px-[50px] cursor-pointer hover:bg-gray-300  text-semiblack hover:text-semiblack'>
+                                            }} className='flex items-center space-x-2 py-2  px-[50px] cursor-pointer hover:bg-gray-500  text-white '>
                                                 <p className='text-[15px] font-inter '>{tag}</p>
 
                                             </div>
@@ -482,7 +483,7 @@ function Navbar() {
                                 </div>
                             }
                         </div>
-                        <button type="submit" className={`ml-2 bg-button hover:bg-button_hover text-semiblack text-sm h-10 px-8 m-1.5 rounded-[20px] transition-all duration-300 ease-in-out ${searchKey ? 'opacity-100 visible' : 'opacity-0 hidden 2xl:flex'}`}    >
+                        <button type="submit" className={`ml-2 bg-button hover:bg-button_hover text-white text-sm h-10 px-8 m-1.5 rounded-[20px] transition-all duration-300 ease-in-out ${searchKey ? 'opacity-100 visible' : 'opacity-0 hidden 2xl:flex'}`}    >
                             Search
                         </button>
 
@@ -495,7 +496,7 @@ function Navbar() {
                             {/* <UserIcon className='h-8 w-8' /> */}
                             {!user &&
                                 <div className='flex items-center space-x-2  font-inter'>
-                                    <p onClick={() => setLoginModalVisible(true)} className=' m-2 text-semiblack   hover:bg-gray-200  px-8 rounded-[22px] py-[5px]  cursor-pointer block_popunder border-[0.8px] border-semiblack '>Login</p>
+                                    <p onClick={() => setLoginModalVisible(true)} className=' m-2 text-white    hover:bg-button_hover px-8 rounded-[22px] py-[5px]  cursor-pointer block_popunder border-[0.8px] border-semiblack '>Login</p>
                                     {/* <p onClick={() => { router.push('/account/register') }} className='m-1 underline rounded   pl-2 pr-2  cursor-pointer hover:text-white'>Register</p> */}
                                 </div>
                             }
@@ -508,7 +509,7 @@ function Navbar() {
                             }
                             <Link href='/membership' legacyBehavior>
                                 <a
-                                    rel="dofollow" 
+                                    rel="dofollow"
                                 >
                                     <button className="bg-red-500 text-white rounded-[22px] font-semibold text-center px-5 p-1.5 m-1 text-md block_popunder hover:scale-105 transition-transform duration-300 text-nowrap">
                                         Join Now
@@ -530,15 +531,15 @@ function Navbar() {
 
 
 
-                <div className='w-full  text-white items-center justify-around   flex  px-1 shadow-lg'>
+                <div className='w-full  text-white items-center justify-around   flex  px-1 shadow-lg pl-[100px]'>
                     {navigation.map(item => {
                         const isActive = currentPath === item.href;
 
                         return (
                             <Link href={item.href} legacyBehavior key={item.name}>
                                 <a rel="dofollow"
-                                    className={`text-xl 2xl:text-2xl font-semibold text-semiblack cursor-pointer p-1 border-b-4 
-                    ${isActive ? 'border-theme_red' : 'border-transparent hover:border-theme_red'}
+                                    className={`text-xl 2xl:text-2xl font-medium text-gray-300 cursor-pointer p-1 border-b-4 
+                    ${isActive ? 'border-theme_green' : 'border-transparent hover:border-theme_green'}
                     transition-colors duration-300`}
                                 >
                                     {item.name}
@@ -548,7 +549,9 @@ function Navbar() {
                     })}
 
 
-
+                    <Link href='/'>
+                        <img src='/logo.png' alt="logo" className='w-[100px] h-[110px] object-cover object-top absolute left-2  top-2' />
+                    </Link>
 
                 </div>
 

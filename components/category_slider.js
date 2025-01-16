@@ -31,7 +31,7 @@ function Category_slider({ trendingCategories }) {
 
                                 />
                             </div>
-                            <h2 className='text-xs text-center font-poppins text-gray-600 font-semibold mt-1 whitespace-nowrap'>{category.name.substring(0, category.name.indexOf('.png')).toUpperCase()}</h2>
+                            <h2 className='text-xs text-center font-poppins text-gray-300 font-semibold mt-1 whitespace-nowrap'>{category.name.substring(0, category.name.indexOf('.png')).toUpperCase()}</h2>
                         </div>
                     </Link>
                 )
