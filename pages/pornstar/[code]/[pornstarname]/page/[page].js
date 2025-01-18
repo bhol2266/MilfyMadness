@@ -78,13 +78,13 @@ function Index({ video_collection, pages, pornstarInformation, collageImages, po
 
             <Head>
 
-                <title>{`${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} Porn Videos ${getcurrentyear()} - xHamster | ${currentPageNumberURL}`}</title>
+                <title>{`${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} Porn Videos ${getcurrentyear()} - MilfyMadness | ${currentPageNumberURL}`}</title>
 
                 <meta name="description" content={`Find nude ${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} porn videos featuring the porn star fucks in XXX scenes, including amateur, anal, blowjob!`} />
                 <meta name="keywords" content="porn, xxx, streaming porn, HD porn, HD adult videos, HD pussy videos, sex movies, chutlunds" />
-                <meta property="og:title" content={`${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} Porn Videos ${getcurrentyear()} - xHamster`} />
+                <meta property="og:title" content={`${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} Porn Videos ${getcurrentyear()} - MilfyMadness`} />
                 <meta property="og:description" content={`Find nude ${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} porn videos featuring the porn star fucks in XXX scenes, including amateur, anal, blowjob!`} />
-                <meta name="twitter:title" content={`${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} Porn Videos ${getcurrentyear()} - xHamster`} />
+                <meta name="twitter:title" content={`${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} Porn Videos ${getcurrentyear()} - MilfyMadness`} />
                 <meta name="twitter:description" content={`Find nude ${capitalizeFirstLetter(pornstarname.replace('+', " ").replace("+", " "))} porn videos featuring the porn star fucks in XXX scenes, including amateur, anal, blowjob!`} />
                 <link rel="canonical" href={`https://www.milfymadness.com/pornstar/${code}/${pornstarname}/page/${page}`} />
 

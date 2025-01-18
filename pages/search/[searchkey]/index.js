@@ -44,12 +44,12 @@ function Search({ video_collection, pages }) {
   return (
     <>
       <Head>
-        <title>{`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - xHamster`}</title>
-        <meta name="description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on xHamster!`} />
-        <meta property="og:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - xHamster | ${currentPageNumberURL}`} />
-        <meta property="og:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on xHamster!`} />
-        <meta name="twitter:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - xHamster | ${currentPageNumberURL}`} />
-        <meta name="twitter:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on xHamster!`} />
+        <title>{`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness`}</title>
+        <meta name="description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on MilfyMadness!`} />
+        <meta property="og:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`} />
+        <meta property="og:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on MilfyMadness!`} />
+        <meta name="twitter:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`} />
+        <meta name="twitter:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on MilfyMadness!`} />
         G
         {/* Additional meta tags */}
         <link rel="canonical" href={`https://www.milfymadness.com/search/${searchkey}`} />
