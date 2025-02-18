@@ -44,7 +44,7 @@ export default function Banner_for_chutlund2() {
         ) go to our alternate website{' '}
 
 
-        <a href="https://chutlunds4.com" className="underline text-yellow-500 font-inter">Chutlunds4.com </a>
+        <a href="https://cumcraze.com" className="underline text-yellow-500 font-inter">cumcraze.com </a>
         ,
         <a href="https://milfymadness1.com" className="ml-1 underline text-yellow-500 font-inter">milfymadness1.com</a>
 
