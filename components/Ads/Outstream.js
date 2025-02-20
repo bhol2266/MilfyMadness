@@ -21,14 +21,13 @@ function Outstreams() {
                 id={uniqid}
                 dangerouslySetInnerHTML={{
                     __html: ` TSOutstreamVideo({
-                        spot: "1db617858c5f4d1ca2523ba428223699",
-                        containerId: "ts_ad_video_1lcvn",
-                        cookieExpires: "4",
-                         extid: "{extid}",
-                    });`,
+       spot: "744613a07092479f92cc0bb76b507968",
+       containerId: "ts_ad_video_3el92",
+       cookieExpires: "4",
+        extid: "{extid}",
+   });`,
                 }}
             />
-
 
 
 

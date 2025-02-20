@@ -17,7 +17,7 @@ function PopunderAds() {
                 <Script
                     type="text/javascript"
                     src="//cdn.tsyndicate.com/sdk/v1/p.js"
-                    data-ts-spot="637f41ccc95a46769276024b3fe07174"
+                    data-ts-spot="ec5a5c1836ba4a4190655a3ba8fa1776"
                     data-ts-extid="{extid}"
                     data-ts-session-duration="300"
                     data-ts-count="5"

@@ -11,7 +11,7 @@ function BannerAds() {
             <Script
                 type="text/javascript"
                 src="//cdn.tsyndicate.com/sdk/v1/bi.js"
-                data-ts-spot="9d2353bb144e44528acb154218a20ded"
+                data-ts-spot="6827902fa6624d0aa77559c3a5d4fadb"
                 data-ts-width="300"
                 data-ts-height="250"
                 data-ts-extid="{extid}"
