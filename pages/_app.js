@@ -16,7 +16,7 @@ import { useEffect } from 'react';
 import Outstreams from '../components/Ads/Outstream';
 import ClickAduBannerAds from '../components/Ads/ClickAduBannerAds';
 import { bannedKeywords } from '../JsonData/BannedKeywords';
-
+import { Analytics } from "@vercel/analytics/react"
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -105,6 +105,8 @@ function MyApp({ Component, pageProps }) {
             <Outstreams />
             <Outstreams />
             <BannerAds />
+            <Analytics />
+
           </div>
           {currentRoute != "/membership" && <Footer />}
 
