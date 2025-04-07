@@ -33,27 +33,26 @@ function Search({ video_collection, pages }) {
   if (router.isFallback || !searchkey) {
     return (
       <div className="flex justify-center mx-auto mt-10 ">
-        <BeatLoader loading size={25} color={'#D1D5DB'} />
+        <BeatLoader loading size={25} color={'#232b2b'} />
       </div>
     );
   }
 
-  function getcurrentyear() {
-    return new Date().getFullYear();
-  }
+
   return (
     <>
-      <Head>
+       <Head>
         <title>{`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness`}</title>
         <meta name="description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on MilfyMadness!`} />
         <meta property="og:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`} />
         <meta property="og:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on MilfyMadness!`} />
         <meta name="twitter:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`} />
         <meta name="twitter:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${getcurrentyear()} on MilfyMadness!`} />
-        G
+        
         {/* Additional meta tags */}
         <link rel="canonical" href={`https://www.milfymadness.com/search/${searchkey}`} />
       </Head>
+
 
       <Header keyword={searchkey.replace("+", " ")} pageNumber={currentPageNumberURL} />
       <Videos data={video_collection} />
@@ -80,7 +79,7 @@ export async function getServerSideProps(context) {
   if (searchkey == "bbc") {
 
     const parcelData = { url: `https://spankbang.party/s/${searchkey.toLowerCase().trim()}/?o=all` };
-    const API_URL = `${process.env.BACKEND_URL}getvideos`;
+    const API_URL = `${process.env.BACKEND_URL}getVideos`;
 
     const rawResponse = await fetch(API_URL, {
       headers: {
@@ -92,6 +91,7 @@ export async function getServerSideProps(context) {
     });
 
     const { finalDataArray, pages } = await rawResponse.json();
+
 
     return {
       props: {

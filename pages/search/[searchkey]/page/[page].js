@@ -13,9 +13,7 @@ function Search({ video_collection, pages }) {
     const router = useRouter();
     const { searchkey, page } = router.query
 
-    function getcurrentyear() {
-        return new Date().getFullYear();
-      }
+
 
     const currentPageNumberURL = page
 
@@ -27,7 +25,7 @@ function Search({ video_collection, pages }) {
     if (router.isFallback) {
         return (
             <div className="flex justify-center mx-auto mt-10 ">
-                <BeatLoader loading size={25} color={'#D1D5DB'} />
+                <BeatLoader loading size={25} color={'#232b2b'} />
             </div>
         )
     }
@@ -88,7 +86,7 @@ export async function getServerSideProps(context) {
 
         const parcelData = { url: `https://spankbang.party/s/${searchkey.toLowerCase().trim()}/${page}/?o=all` };
 
-        const API_URL = `${process.env.BACKEND_URL}getvideos`;
+        const API_URL = `${process.env.BACKEND_URL}getVideos`;
 
         const rawResponse = await fetch(API_URL, {
             headers: {

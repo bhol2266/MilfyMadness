@@ -33,7 +33,15 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
 
 
     useEffect(() => {
-        setcurrentPage(window.location.href.includes('/search/') ? "searchPage" : "categoryPage")
+        const href = window.location.href;
+
+        if (href === window.location.origin + "/" || href.includes("/query")) {
+            setcurrentPage("Homepage");
+        } else if (href.includes('/search/')) {
+            setcurrentPage("searchPage");
+        } else {
+            setcurrentPage("categoryPage");
+        }
     }, [])
 
 
@@ -154,6 +162,8 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
     ]
 
     const clickHandler = (query) => {
+        console.log(currentPage);
+
         setSpinner(true)
         var queryObj = {}
         //if this Header component is of search page or category page
@@ -181,17 +191,24 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
         }
 
 
+
         if (currentPage === 'searchPage') {
             Router.push({
                 pathname: `/search/query/`,
                 query: queryObj
-            })
+            });
+        } else if (currentPage === 'Homepage') {
+            Router.push({
+                pathname: `/query/`,
+                query: queryObj
+            });
         } else {
             Router.push({
                 pathname: `/category/query/`,
                 query: queryObj
-            })
+            });
         }
+
 
 
     }
@@ -250,14 +267,14 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
 
     return (
 
-        <div className='basicMargin md:ml-6'>
+        <div className='basicMargin lg:ml-4 2xl:ml-6'>
 
             <div className='flex items-center md:pr-10 pt-2 my-1  md:my-2 pl-1'>
                 <div className='flex  '>
-                    <h1 className='text-xl md:text-2xl   font-semibold text-theme_text font-inter my-1  '>{capitalizeFirstLetter(keyword).replace(/\+/g, " ")} Porn videos</h1>
+                    <h1 className='text-xl md:text-2xl text-white  font-inter my-1  '>{capitalizeFirstLetter(keyword).replace(/\+/g, " ")} Porn videos</h1>
 
                 </div>
-                <p className='text-md md:text-xl  pl-1 pr-1  flex-grow font-inter  text-right text-theme_text '>{`Page-${pageNumber}`}</p>
+                <p className='text-md md:text-xl  pl-1 pr-1  flex-grow font-inter  text-right  '>{`Page-${pageNumber}`}</p>
             </div>
 
 
@@ -267,7 +284,7 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
                 <div className='flex items-center flex-wrap justify-start space-x-1 md:space-x-2 mb-2 md:mb-0 mr-1'>
                     {Final_filteredArray.map(item => {
                         return (
-                            <div key={item} onClick={() => { removefilter(item) }} className=' text-xs md:text-sm hover:bg-button_hover cursor-pointer bg-button rounded-lg px-2 py-1 flex items-center space-x-1'>
+                            <div key={item} onClick={() => { removefilter(item) }} className=' text-xs md:text-sm hover:bg-red-600 cursor-pointer bg-theme_green rounded-lg px-2 py-1 flex items-center space-x-1'>
                                 <p className=' text-white font-inter ' >{item}</p>
                                 <XCircleIcon className='h-4 md:h-6 text-white' />
                             </div>
@@ -278,11 +295,11 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
 
                     <div className='flex items-center justify-start md:justify-center mb-1    space-x-1 sm:space-x-2 '>
 
-                    <Menu as="div" className={` relative  text-left`}>
+                        <Menu as="div" className={` relative  text-left`}>
                             <div className='w-fit'>
-                                <Menu.Button className="inline-flex justify-center cursor-pointer  w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500  text-theme_text">
+                                <Menu.Button className="inline-flex justify-center cursor-pointer text-gray-300  w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500 ">
                                     Filter
-                                    <FilterIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px] text-theme_text" aria-hidden="true" />
+                                    <FilterIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px]" aria-hidden="true" />
                                 </Menu.Button>
 
                             </div>
@@ -326,10 +343,10 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
 
                         <Menu as="div" className="relative  text-left">
                             <div className=' w-fit'>
-                                <Menu.Button className="inline-flex justify-center cursor-pointer  w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500  text-theme_text">
+                                <Menu.Button className="inline-flex justify-center cursor-pointer text-gray-300   w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500 ">
 
                                     Quality
-                                    <CogIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px] text-theme_text" aria-hidden="true" />
+                                    <CogIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px]" aria-hidden="true" />
                                 </Menu.Button>
                             </div>
 
@@ -374,9 +391,9 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
 
                         <Menu as="div" className="relative  text-left">
                             <div className=' w-fit'>
-                                <Menu.Button className="inline-flex justify-center cursor-pointer  w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500  text-theme_text">
+                                <Menu.Button className="inline-flex justify-center cursor-pointer text-gray-300   w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500 ">
                                     Duration
-                                    <ClockIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px] text-theme_text" aria-hidden="true" />
+                                    <ClockIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px]" aria-hidden="true" />
                                 </Menu.Button>
                             </div>
 
@@ -418,9 +435,9 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
 
                         <Menu as="div" className="relative  text-left">
                             <div className=' w-fit'>
-                                <Menu.Button className="inline-flex justify-center cursor-pointer  w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500  text-theme_text">
+                                <Menu.Button className="inline-flex justify-center cursor-pointer text-gray-300   w-full rounded-md  shadow-sm px-2 py-2 bg-neutral-600 text-sm font-medium hover:bg-neutral-500 ">
                                     Date
-                                    <CalendarIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px] text-theme_text" aria-hidden="true" />
+                                    <CalendarIcon className="-mr-1 ml-2 h-4 md:h-5  w-4 md:w-5  mt-[1.5px]" aria-hidden="true" />
                                 </Menu.Button>
                             </div>
 

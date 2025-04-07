@@ -1,55 +1,64 @@
-import Head from 'next/head';
 import { useRouter } from "next/router";
-import PaginationQuery from '../../components/PaginationQuery';
-import Sidebar from "../../components/Sidebar";
-import Videos from "../../components/Videos";
-import Header from '../../components/searchPage/Header';
-import { scrapeVideos } from '../../config/spangbang';
+import Sidebar from "../components/Sidebar";
+import Videos from "../components/Videos";
+import Header from '../components/searchPage/Header'
+import { BeatLoader } from 'react-spinners'
+import { useContext, useState } from 'react';
+import videosContext from '../context/videos/videosContext';
+import Router from 'next/router'
+import Head from 'next/head'
+import PaginationQuery from '../components/PaginationQuery';
+import { scrapeVideos } from '../config/spangbang';
 
-function Category({ video_collection, pages, query, keyword, currentPage, filteredObjsArray }) {
+function HomepageQuery({ video_collection, pages, query, keyword, currentPage, filteredObjsArray }) {
 
 
 
   const router = useRouter();
   const currentPageNumberURL = currentPage
 
- 
+  function capitalizeFirstLetter(string) {
+    
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   return (
 
-    <div className="">
+    <>
 
       <div>
 
-        <Header keyword={keyword} pageNumber={currentPageNumberURL} filteredObjsArrayProps={filteredObjsArray} />
+        <Header keyword={keyword.replace("+", " ")} pageNumber={currentPageNumberURL} filteredObjsArrayProps={filteredObjsArray} />
         <div className="flex">
           {/* <Sidebar /> */}
           <Videos data={video_collection} />
-
 
         </div>
 
 
         {/* PAGINATION */}
-        <PaginationQuery data={{ keyword: keyword, pathname: `/category/query/`, currentPageNumberURL: currentPageNumberURL, pages: pages, filteredObjsArray: filteredObjsArray }} />
-
-
+        <PaginationQuery data={{ keyword: keyword, pathname: `/search/query/`, currentPageNumberURL: currentPageNumberURL, pages: pages, filteredObjsArray: filteredObjsArray }} />
       </div>
 
 
-    </div>
+    </>
   )
 }
 
-export default Category
+export default HomepageQuery
 
 
 
 
 export async function getServerSideProps(context) {
-  const { category, page } = context.query;
+  var { searchkey, category, page } = context.query;
   var finalDataArray = []
   var pages = []
+
+  if (typeof category != 'undefined') {
+    searchkey = category
+  }
+
 
 
   const { o, q, d, p, } = context.query;
@@ -91,21 +100,19 @@ export async function getServerSideProps(context) {
   }
 
 
-
-
   if (filteredObjsArray.length > 0) {
 
-    const obj = await scrapeVideos(`https://spankbang.party/s/${category}/${page}/?${completeSearch}`)
+    const obj = await scrapeVideos(`https://spankbang.party/trending_videos/${page}/?${completeSearch}`)
     finalDataArray = obj.finalDataArray
     pages = obj.pages
-    console.log(`https://spankbang.party/s/${category}/${page}/?${completeSearch}`);
+    console.log(`https://spankbang.party/trending_videos/${page}/?${completeSearch}`);
   }
   else {
 
-    const obj = await scrapeVideos(`https://spankbang.party/s/${category}/${page}/`)
+    const obj = await scrapeVideos(`https://spankbang.party/trending_videos/${page}/`)
     finalDataArray = obj.finalDataArray
     pages = obj.pages
-    console.log(`https://spankbang.party/s/${category}/${page}/`);
+    console.log(`https://spankbang.party/trending_videos/${page}/`);
 
   }
 
@@ -114,7 +121,7 @@ export async function getServerSideProps(context) {
       video_collection: finalDataArray,
       pages: pages,
       query: filteredObjsArray,
-      keyword: category,
+      keyword: searchkey,
       currentPage: page,
       filteredObjsArray: filteredObjsArray
     }
@@ -122,6 +129,4 @@ export async function getServerSideProps(context) {
 
 
 }
-
-
 
