@@ -49,10 +49,8 @@ jobs:
             git pull origin main
 
             # Install dependencies & build
-            yarn install --frozen-lockfile
             yarn build
 
-            # Restart PM2 process
             # Restart PM2 process
             pm2 restart "$APP_NAME"
             pm2 save
