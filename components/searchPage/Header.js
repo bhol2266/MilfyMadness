@@ -274,7 +274,7 @@ export default function Header({ keyword, pageNumber, filteredObjsArrayProps }) 
                     <h1 className='text-xl md:text-2xl text-white  font-inter my-1  '>{capitalizeFirstLetter(keyword).replace(/\+/g, " ")} Porn videos</h1>
 
                 </div>
-                <p className='text-md md:text-xl  pl-1 pr-1  flex-grow font-inter  text-right  '>{`Page-${pageNumber}`}</p>
+                <p className='text-md md:text-xl  pl-1 pr-1  flex-grow font-inter  text-white text-right  '>{`Page-${pageNumber}`}</p>
             </div>
 
 
