@@ -10,115 +10,115 @@ import { scrapeVideos } from '../../../../config/spangbang';
 
 function Search({ video_collection, pages }) {
 
-    const router = useRouter();
-    const { searchkey, page } = router.query
+  const router = useRouter();
+  const { searchkey, page } = router.query
 
 
 
-    const currentPageNumberURL = page
+  const currentPageNumberURL = page
 
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
 
-    if (router.isFallback) {
-        return (
-            <div className="flex justify-center mx-auto mt-10 ">
-                <BeatLoader loading size={25} color={'#232b2b'} />
-            </div>
-        )
-    }
-
+  if (router.isFallback) {
     return (
-        <>
-            <Head>
-
-                <title>{`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`}</title>
-
-                <meta name="description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${} on MilfyMadness!`} />
-
-
-                <meta property="og:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`} />
-                <meta property="og:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${} on MilfyMadness!`} />
-                <meta name="twitter:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`} />
-                <meta name="twitter:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in ${} on MilfyMadness!`} />
-                <link rel="canonical" href={`https://www.milfymadness.com/search/${searchkey}/page/${page}`} />
-
-
-
-
-
-            </Head>
-
-            <Header keyword={searchkey.replace("+", " ")} pageNumber={currentPageNumberURL} />
-            <div className="flex">
-                {/* <Sidebar /> */}
-                <Videos data={video_collection} />
-
-            </div>
-
-            <Pagination data={{ url: `/search/${searchkey.toLowerCase().trim()}`, currentPageNumberURL: currentPageNumberURL, pages: pages, }} />
-
-        </>
+      <div className="flex justify-center mx-auto mt-10 ">
+        <BeatLoader loading size={25} color={'#232b2b'} />
+      </div>
     )
+  }
+
+  return (
+    <>
+      <Head>
+
+        <title>{`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`}</title>
+
+        <meta name="description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in on MilfyMadness!`} />
+
+
+        <meta property="og:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`} />
+        <meta property="og:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in on MilfyMadness!`} />
+        <meta name="twitter:title" content={`${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} Porn Videos - MilfyMadness | ${currentPageNumberURL}`} />
+        <meta name="twitter:description" content={`Watch ${capitalizeFirstLetter(searchkey.replace('+', " ").replace("+", " "))} porn videos. Explore tons of XXX movies with sex scenes in on MilfyMadness!`} />
+        <link rel="canonical" href={`https://www.milfymadness.com/search/${searchkey}/page/${page}`} />
+
+
+
+
+
+      </Head>
+
+      <Header keyword={searchkey.replace("+", " ")} pageNumber={currentPageNumberURL} />
+      <div className="flex">
+        {/* <Sidebar /> */}
+        <Videos data={video_collection} />
+
+      </div>
+
+      <Pagination data={{ url: `/search/${searchkey.toLowerCase().trim()}`, currentPageNumberURL: currentPageNumberURL, pages: pages, }} />
+
+    </>
+  )
 }
 
 export default Search
 
 
 // export async function getStaticPaths() {
-//     return {
+//   return {
 
-//         paths: [{ params: { searchkey: 'bbc', page: '1' } }],
-//         fallback: true // false or 'blocking'
-//     };
+//     paths: [{ params: { searchkey: 'bbc', page: '1' } }],
+//     fallback: true // false or 'blocking'
+//   };
 // }
 
 
 export async function getServerSideProps(context) {
 
-    const { searchkey, page } = context.params;
+  const { searchkey, page } = context.params;
 
 
 
-    if (searchkey == "bbc" && page == "1") {
+  if (searchkey == "bbc" && page == "1") {
 
-        const parcelData = { url: `https://spankbang.party/s/${searchkey.toLowerCase().trim()}/${page}/?o=all` };
+    const parcelData = { url: `https://spankbang.party/s/${searchkey.toLowerCase().trim()}/${page}/?o=all` };
 
-        const API_URL = `${process.env.BACKEND_URL}getVideos`;
+    const API_URL = `${process.env.BACKEND_URL}getVideos`;
 
-        const rawResponse = await fetch(API_URL, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            method: 'POST',
-            body: JSON.stringify(parcelData),
-        });
+    const rawResponse = await fetch(API_URL, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(parcelData),
+    });
 
-        const { finalDataArray, pages } = await rawResponse.json();
+    const { finalDataArray, pages } = await rawResponse.json();
 
 
-        return {
-            props: {
-                video_collection: finalDataArray,
-                pages: pages
-            }
-        }
-    } else {
-
-        const obj = await scrapeVideos(`https://spankbang.party/s/${searchkey.toLowerCase().trim()}/${page}/?o=all`)
-        var finalDataArray = obj.finalDataArray
-        var pages = obj.pages
-
-        return {
-            props: {
-                video_collection: finalDataArray,
-                pages: pages
-            }
-        }
+    return {
+      props: {
+        video_collection: finalDataArray,
+        pages: pages
+      }
     }
+  } else {
+
+    const obj = await scrapeVideos(`https://spankbang.party/s/${searchkey.toLowerCase().trim()}/${page}/?o=all`)
+    var finalDataArray = obj.finalDataArray
+    var pages = obj.pages
+
+    return {
+      props: {
+        video_collection: finalDataArray,
+        pages: pages
+      }
+    }
+  }
 
 
 }
