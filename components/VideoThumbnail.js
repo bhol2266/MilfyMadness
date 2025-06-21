@@ -7,7 +7,7 @@ import { FaUserCheck } from "react-icons/fa";
 import videosContext from '../context/videos/videosContext';
 import PopunderAds from './Ads/Popunder';
 import Link from 'next/link';
-import isMembershipActive from '../utils/isMembershipActive';
+import { isMembershipActive } from '../config/utils';
 
 function VideoThumbnail({ details, type }) {
     const [videoPage, setVideoPage] = useState(false);
