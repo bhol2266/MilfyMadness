@@ -83,6 +83,7 @@ function Navbar() {
 
 
     }, [])
+    
     useEffect(() => {
         // Check for the email cookie using cookies-next
         const email = getCookie('email');
