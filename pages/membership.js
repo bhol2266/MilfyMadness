@@ -77,6 +77,8 @@ const Membership = () => {
 
     useEffect(() => {
 
+        setSelectedPlan(plans[0]);
+
         const handleResize = () => {
             const width = window.innerWidth
             setwidth(width)
@@ -112,7 +114,7 @@ const Membership = () => {
 
         if (typeof window !== 'undefined') {
             const domain = window.location.origin; // e.g., https://example.com
-
+           
             router.push(`https://www.ukdevelopers.org/membership?planAmount=${selectedPlan.amount}&planDuration=${selectedPlan.duration}&planCode=${selectedPlan.planCode}&source=${domain}`);
             // router.push(`http://localhost:3000/membership?planAmount=${selectedPlan.amount}&planDuration=${selectedPlan.duration}&planCode=${selectedPlan.planCode}&source=${"Chutlunds"}`);
         }
