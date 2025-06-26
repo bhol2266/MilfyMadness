@@ -1,22 +1,20 @@
-import { Scrape_Video_Item } from '@/config/Scrape_Video_Item';
-import { PlusIcon, LinkIcon } from '@heroicons/react/outline';
-import * as cheerio from 'cheerio';
+import { UserAuth } from "@/context/AuthContext";
+import { LinkIcon, PlusIcon } from '@heroicons/react/outline';
+import { getCookie } from 'cookies-next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from "next/router";
+import { useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
 import Pagination from '../../../../../components/Pagination';
 import Header from '../../../../../components/Pornstar_Channels/Header';
 import Videos from "../../../../../components/Videos";
-import Link from 'next/link';
-import { UserAuth } from "@/context/AuthContext";
-import { getCookie } from 'cookies-next';
-import { useState, useEffect } from 'react';
 
 import { checkSubscribedChannel, updateSubcribedChannels } from '@/config/firebase/lib';
 
 
 
-function Index({ video_collection, pages, channel_name, channel_link, collageImages, channel_subscriber, channel_by }) {
+function Index({ video_collection, pages, channel_name, channel_link, collageImages, channel_subscriber, channel_by, channel_image }) {
 
     const router = useRouter();
     const { setLoginModalVisible } = UserAuth();
@@ -47,7 +45,7 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
         const obj = {
             channelName: channel_name,
             href: `/${code}/channel/${channelname}/`,
-            imageUrl: `${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channel_name.trim().toLowerCase().replace(/ /g, "_").replace(/\+/g, "_")}.jpg`
+            imageUrl: channel_image
 
         }
 
@@ -120,7 +118,7 @@ function Index({ video_collection, pages, channel_name, channel_link, collageIma
                         <div>
                             <img
                                 className="object-cover w-36 h-36 lg:w-44 lg:h-44 rounded-[15px] border-[1px] border-gray-200"
-                                src={`${process.env.CLOUDFLARE_STORAGE}Chutlunds_channels_images/${channel_name.trim().toLowerCase().replace(/ /g, "_").replace(/\+/g, "_")}.jpg`}
+                                src={channel_image}
                                 alt={channel_name}
                                 loading="lazy"
                             />
@@ -196,7 +194,6 @@ export async function getStaticPaths() {
 }
 
 
-
 export async function getStaticProps(context) {
 
 
@@ -214,7 +211,7 @@ export async function getStaticProps(context) {
         body: JSON.stringify(parcelData),
     });
 
-    const { finalDataArray, pages, channel_name, channel_subscriber, channel_by, channel_link, collageImages } = await rawResponse.json();
+    const { finalDataArray, pages, channel_name, channel_subscriber, channel_by, channel_link, collageImages, channel_image } = await rawResponse.json();
 
     return {
         props: {
@@ -225,11 +222,10 @@ export async function getStaticProps(context) {
             channel_by: channel_by,
             channel_link: channel_link,
             collageImages: collageImages,
-            channel_image: channelname
+            channel_image: channel_image
 
         }
     }
 
 }
-
 
