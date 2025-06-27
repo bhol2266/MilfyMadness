@@ -11,7 +11,7 @@ export default function ActivateMembership() {
   const [email, setEmail] = useState("");
   const [activationCode, setActivationCode] = useState("");
   const [loading, setLoading] = useState(false);
-  const [autoActivating, setAutoActivating] = useState(true); // Start as true
+  const [autoActivating, setAutoActivating] = useState(true);
   const [message, setMessage] = useState("🔄 Activating membership...");
   const [error, setError] = useState("");
 
@@ -29,7 +29,6 @@ export default function ActivateMembership() {
       setActivationCode(queryCode);
       activateMembership(queryEmail, queryCode, true);
     } else {
-      // No activation params, stop auto spinner and show form
       setAutoActivating(false);
     }
   }, [router.query]);
@@ -68,7 +67,6 @@ export default function ActivateMembership() {
         return;
       }
 
-      // Set cookies
       setCookie("Membership", "true", { expires: expiry });
       setCookie("MemberEmail", data.email, { expires: expiry });
       setCookie("MemberName", data.name || "", { expires: expiry });
@@ -93,61 +91,67 @@ export default function ActivateMembership() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4 text-center">Activate Membership</h1>
+    <div className="flex items-center justify-center min-h-screen bg-neutral-900 text-white p-4">
+      <div className="bg-neutral-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-2xl font-bold text-center text-slate-200 mb-4">
+          Activate Membership
+        </h1>
 
         {/* Spinner */}
         {autoActivating && (
           <div className="text-center mb-4">
-            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-600 mx-auto mb-2"></div>
-            <p className="text-blue-600 font-medium">{message}</p>
+            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-slate-400 mx-auto mb-2"></div>
+            <p className="text-slate-300 font-medium">{message}</p>
           </div>
         )}
 
-        {/* Show form only when auto activation is not running */}
+        {/* Form */}
         {!autoActivating && (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium">Email</label>
+              <label className="block text-sm font-medium text-slate-300">Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="mt-1 w-full rounded-md border border-neutral-600 bg-neutral-700 text-white p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium">Activation Code</label>
+              <label className="block text-sm font-medium text-slate-300">Activation Code</label>
               <input
                 type="text"
                 value={activationCode}
                 onChange={(e) => setActivationCode(e.target.value)}
                 required
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2"
+                className="mt-1 w-full rounded-md border border-neutral-600 bg-neutral-700 text-white p-2 focus:outline-none focus:ring-2 focus:ring-slate-500"
               />
             </div>
 
-            {error && <p className="text-red-500 text-sm">{error}</p>}
+            {error && <p className="text-red-400 text-sm">{error}</p>}
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+              className={`w-full py-2 rounded font-semibold transition ${
+                loading
+                  ? "bg-neutral-600 cursor-not-allowed"
+                  : "bg-neutral-700 hover:bg-neutral-600"
+              } text-white`}
             >
               {loading ? "Activating..." : "Activate"}
             </button>
           </form>
         )}
 
-        {/* Show membership link if expired */}
+        {/* Membership expired link */}
         {!autoActivating &&
           error === "❌ Your membership has expired. Please purchase again." && (
             <div className="text-center mt-4">
-              <p className="text-sm">Need a new membership?</p>
-              <Link href="/membership" className="text-blue-600 underline">
+              <p className="text-sm text-slate-300">Need a new membership?</p>
+              <Link href="/membership" className="text-slate-200 underline hover:text-slate-100">
                 Go to Membership Page
               </Link>
             </div>

@@ -105,18 +105,14 @@ function Index({ video_collection, trendingChannels, newChannels }) {
         setdata(data.concat(channels.slice(startIndex, startIndex + 100)));
     }
 
-    const customiseUrl = (channel_name) => {
-        var href = ""
-        channels.forEach(obj => {
-            if (obj.channel_name === channel_name) {
-                href = obj.channel_href
-            }
-        })
+    const customiseUrl = (href) => {
+
         const code = href.substring(href.indexOf("party/") + 6, href.indexOf("/channel"))
         const channelname_href = href.substring(href.indexOf("channel/") + 8, href.length)
 
         return `/channels/${code}/${channelname_href}`
     }
+
 
     return (
 
@@ -148,7 +144,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
                 <div className={`grid grid-cols-4  sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7 mt-4`}>
                     {suggestedData.length != 0 && suggestedData.map(obj => {
-                        const href = customiseUrl(obj.channel_name)
+                        const href = customiseUrl(obj.channel_href)
                         return (
                             <Link key={obj.channel_name} href={href}>  <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
                                 <img
@@ -172,7 +168,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                 <PopunderAds />
                 <div className={`grid grid-cols-4 py-3 sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7`}>
                     {trendingChannels.map(obj => {
-                        const href = customiseUrl(obj.channelName)
+                        const href = customiseUrl(obj.channel_href)
                         return (
                             <Link key={obj.channelName} href={href}>
                                 <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
@@ -199,7 +195,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
 
                 <div className={`grid grid-cols-4 py-3 sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7`}>
                     {newChannels.map(obj => {
-                        const href = customiseUrl(obj.channelName)
+                        const href = customiseUrl(obj.channel_href)
                         return (
                             <Link key={obj.channelName} href={href}>
                                 <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >
@@ -237,7 +233,7 @@ function Index({ video_collection, trendingChannels, newChannels }) {
                         <div className={`grid grid-cols-4 py-3 sm:grid-cols-4 gap-3 md:gap-5 lg:gap-4  md:grid-cols-6 2xl:grid-cols-7`}>
                             {data.map(obj => {
 
-                                const href = customiseUrl(obj.channel_name)
+                                const href = customiseUrl(obj.channel_href)
                                 return (
                                     <Link key={obj.channel_name} href={href}>
                                         <div className='  relative hover:scale-105 transform transition duration-150 rounded   aspect-box  ' >

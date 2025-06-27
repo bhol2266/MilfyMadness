@@ -122,6 +122,8 @@ const Membership = () => {
 
 
     const { paymentModalVisible, setpaymentModalVisible, selectedPlan, setSelectedPlan } = useContext(videosContext);
+
+
     return (
         <div className='relative h-screen' >
 
