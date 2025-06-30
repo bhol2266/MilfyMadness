@@ -4,10 +4,9 @@ import { useContext, useEffect, useRef, useState, } from 'react';
 import ReactCountryFlag from "react-country-flag";
 import { UserAuth } from "../context/AuthContext";
 import videosContext from '../context/videos/videosContext';
-import { MdLiveTv } from "react-icons/md";
-
+import { calculateDaysLeft, isMembershipActive } from "../config/utils";
 import { Fragment } from 'react';
-import { isMembershipActive } from "../config/utils";
+import { MdLiveTv } from "react-icons/md";
 
 
 
@@ -42,16 +41,13 @@ function classNames(...classes) {
 function Navbar() {
 
     const { user, setUser, setLoginModalVisible } = UserAuth();
-    const [isMember, setIsMember] = useState(false);
-    const [daysLeft, setDaysLeft] = useState(null);
-
 
 
     const router = useRouter();
     const currentPath = router.pathname;
 
     const context = useContext(videosContext);
-    const { currentLocation, countryBlocked } = context;
+    const { currentLocation, countryBlocked, daysLeft, setDaysLeft, isMember, setIsMember } = context;
 
     const [location, setlocation] = useState(currentLocation)
     const [searchKey, setsearchKey] = useState('')
@@ -68,22 +64,12 @@ function Navbar() {
         setIsMember(isActive);
 
         if (isActive) {
-            const expiryString = getCookie('MembershipExpires');
-            console.log('====================================');
-            console.log(expiryString);
-            console.log('====================================');
-            if (expiryString) {
-                const expiryDate = new Date(expiryString);
-                const today = new Date();
-                const timeDiff = expiryDate.getTime() - today.getTime();
-                const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-                setDaysLeft(daysRemaining);
-            }
+            setDaysLeft(calculateDaysLeft());
         }
 
 
     }, [])
-    
+
     useEffect(() => {
         // Check for the email cookie using cookies-next
         const email = getCookie('email');
@@ -125,7 +111,7 @@ function Navbar() {
             setsearchBarVisibility('hidden')
 
         }
-        // router.push('/search')
+        router.push('/search')
     }
 
     const goSearch = (e) => {
@@ -182,7 +168,6 @@ function Navbar() {
             settags(filteredTagArray)
         }
     }
-
     return (
 
         <div className='font-inter  shadow bg-black'>

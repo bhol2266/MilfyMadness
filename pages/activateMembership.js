@@ -1,37 +1,48 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import db from "../firebase";
 import { setCookie } from "cookies-next";
 import Link from "next/link";
-import { isMembershipActive } from "../config/utils";
+import { calculateDaysLeft, isMembershipActive } from "../config/utils";
+import videosContext from '../context/videos/videosContext';
+
 
 export default function ActivateMembership() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [activationCode, setActivationCode] = useState("");
   const [loading, setLoading] = useState(false);
-  const [autoActivating, setAutoActivating] = useState(true);
+  const [autoActivating, setAutoActivating] = useState(true); // Start as true
   const [message, setMessage] = useState("🔄 Activating membership...");
   const [error, setError] = useState("");
 
+
+  const context = useContext(videosContext);
+  const { daysLeft, setDaysLeft, isMember, setIsMember } = context;
+
+
   useEffect(() => {
-    const isActive = isMembershipActive();
-    if (isActive) {
-      router.push("/");
-      return;
+
+    if (!router.isReady) return;
+
+
+    if (router.query.email == "undefined") {
+      setAutoActivating(false);
     }
 
     const { email: queryEmail, code: queryCode } = router.query;
-
     if (queryEmail && queryCode) {
       setEmail(queryEmail);
       setActivationCode(queryCode);
       activateMembership(queryEmail, queryCode, true);
     } else {
+      // No activation params, stop auto spinner and show form
       setAutoActivating(false);
     }
   }, [router.query]);
+
+
 
   const activateMembership = async (email, code, isAuto = false) => {
     setError("");
@@ -67,6 +78,7 @@ export default function ActivateMembership() {
         return;
       }
 
+      // Set cookies
       setCookie("Membership", "true", { expires: expiry });
       setCookie("MemberEmail", data.email, { expires: expiry });
       setCookie("MemberName", data.name || "", { expires: expiry });
@@ -74,7 +86,9 @@ export default function ActivateMembership() {
 
       setMessage("✅ Membership activated successfully.");
       if (!isAuto) alert("✅ Your membership is successfully activated.");
-      router.reload();
+      setDaysLeft(calculateDaysLeft());
+      setIsMember(true)
+      router.push("/");
     } catch (err) {
       console.error("Activation error:", err);
       setError("⚠️ An error occurred. Please try again later.");
@@ -87,9 +101,10 @@ export default function ActivateMembership() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    activateMembership(email, activationCode);
-  };
+    activateMembership(email, activationCode, true);
+    setAutoActivating(true);
 
+  };
   return (
     <div className="flex items-center justify-center min-h-screen bg-neutral-900 text-white p-4">
       <div className="bg-neutral-800 p-6 rounded-lg shadow-lg w-full max-w-md">
