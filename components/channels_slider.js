@@ -31,7 +31,7 @@ function Channels_slider({ trendingChannels, trendingDataType }) {
                                     alt={channelObj.channelName}
                                 />
                             </div>
-                            <h2 className='text-xs text-center font-poppins text-gray-600 font-semibold mt-1 whitespace-nowrap'>
+                            <h2 className='text-xs text-center font-poppins text-gray-300 font-semibold mt-1 whitespace-nowrap'>
                                 {channelObj.channelName.toUpperCase()}
                             </h2>
                         </div>
