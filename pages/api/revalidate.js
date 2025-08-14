@@ -8,13 +8,9 @@ export default async function handler(req, res) {
 
   try {
     await res.revalidate('/')
-    await res.revalidate('/trending')
-    await res.revalidate('/upcoming')
-    await res.revalidate('/popular')
-    await res.revalidate('/new_videos')
-    await res.revalidate('/random')
     await res.revalidate('/search')
     await res.revalidate('/channels')
+    await res.revalidate('/pornstar')
 
 
 
