@@ -62,7 +62,6 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
@@ -76,7 +75,16 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:image" content="/logo.png" />
         <meta name="google-site-verification" content="OwcdmtgnWuCidVEu_oPS6eQhmgssoZVQXXPv-BGHVRE" />
         <meta name="clckd" content="989abd1ff7e1399f3e4fc8bef01007d3" />
-        <meta name="6a97888e-site-verification" content="8fe8681a16b3f9b5b28f489ea558e57d" />          </Head>
+        <meta name="6a97888e-site-verification" content="8fe8681a16b3f9b5b28f489ea558e57d" />
+
+
+      </Head>
+
+      <Script
+        id="aclib"
+        src="https://acscdn.com/script/aclib.js"
+        strategy="afterInteractive"
+      />
 
       <Script
         strategy="afterInteractive"
