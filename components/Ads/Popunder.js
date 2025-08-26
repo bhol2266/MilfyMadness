@@ -36,10 +36,12 @@ function PopunderAds() {
                 //Adcash
                 <Script id="popunder-script" strategy="afterInteractive">
                     {`
-          aclib.runPop({
-            zoneId: '10331262',
-          });
-        `}
+    aclib.runPop({
+      zoneId: '10331262',
+      targetElementsCssSelector: '.block_popunder',
+      triggerOnTargetElementsClick: false
+    });
+  `}
                 </Script>
 
             )}
