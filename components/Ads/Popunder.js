@@ -17,6 +17,8 @@ function PopunderAds() {
     return (
         <div className="flex items-center justify-center">
             {showAds && (
+
+                //Traffic Stars
                 // <Script
                 //     type="text/javascript"
                 //     src="//cdn.tsyndicate.com/sdk/v1/p.js"

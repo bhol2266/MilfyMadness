@@ -8,6 +8,8 @@ function BannerAds() {
     return (
         <div className="">
 
+
+            {/* Traffic Stars */}
             {/* <Script
                 type="text/javascript"
                 src="//cdn.tsyndicate.com/sdk/v1/bi.js"
