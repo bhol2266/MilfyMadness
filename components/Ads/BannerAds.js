@@ -8,7 +8,7 @@ function BannerAds() {
     return (
         <div className="">
 
-            <Script
+            {/* <Script
                 type="text/javascript"
                 src="//cdn.tsyndicate.com/sdk/v1/bi.js"
                 data-ts-spot="6827902fa6624d0aa77559c3a5d4fadb"
@@ -17,31 +17,21 @@ function BannerAds() {
                 data-ts-extid="{extid}"
                 async
                 defer
-            />
+            /> */}
 
 
-            {/* Exoclick Multiformat  */}
 
-            {/* <Script
-                async
-                type="application/javascript"
-                src="https://a.magsrv.com/ad-provider.js"
-                strategy="afterInteractive" // Ensures the script runs after the page is interactive
-            />
-            <Script
-                id="ad-provider-init"
-                strategy="afterInteractive" // Ensures this script runs after the external script
-            >
+            {/* Adcash */}
+            <Script id="banner-script" strategy="afterInteractive">
                 {`
-        (window.AdProvider = window.AdProvider || []).push({ "serve": {} });
-      `}
+          aclib.runBanner({
+            zoneId: '10331322',
+          });
+        `}
             </Script>
-            <ins className="eas6a97888e38" data-zoneid="5390772"></ins> */}
 
 
 
-
-  
 
 
         </div>

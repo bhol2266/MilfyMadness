@@ -17,18 +17,29 @@ function PopunderAds() {
     return (
         <div className="flex items-center justify-center">
             {showAds && (
-                <Script
-                    type="text/javascript"
-                    src="//cdn.tsyndicate.com/sdk/v1/p.js"
-                    data-ts-spot="ec5a5c1836ba4a4190655a3ba8fa1776"
-                    data-ts-extid="{extid}"
-                    data-ts-session-duration="300"
-                    data-ts-count="5"
-                    data-ts-mode="selective"
-                    data-ts-ignore-filter="block_popunder"
-                    async
-                    defer
-                />
+                // <Script
+                //     type="text/javascript"
+                //     src="//cdn.tsyndicate.com/sdk/v1/p.js"
+                //     data-ts-spot="ec5a5c1836ba4a4190655a3ba8fa1776"
+                //     data-ts-extid="{extid}"
+                //     data-ts-session-duration="300"
+                //     data-ts-count="5"
+                //     data-ts-mode="selective"
+                //     data-ts-ignore-filter="block_popunder"
+                //     async
+                //     defer
+                // />
+
+
+                //Adcash
+                <Script id="popunder-script" strategy="afterInteractive">
+                    {`
+          aclib.runPop({
+            zoneId: '10331262',
+          });
+        `}
+                </Script>
+
             )}
         </div>
     );
