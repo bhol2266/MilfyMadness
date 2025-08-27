@@ -80,11 +80,7 @@ function MyApp({ Component, pageProps }) {
 
       </Head>
 
-      <Script
-        id="aclib"
-        src="https://acscdn.com/script/aclib.js"
-        strategy="beforeInteractive"
-      />
+  
 
       <Script
         strategy="afterInteractive"
