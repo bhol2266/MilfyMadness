@@ -10,7 +10,7 @@ function BannerAds() {
 
 
             {/* Traffic Stars */}
-            {/* <Script
+            <Script
                 type="text/javascript"
                 src="//cdn.tsyndicate.com/sdk/v1/bi.js"
                 data-ts-spot="6827902fa6624d0aa77559c3a5d4fadb"
@@ -19,18 +19,11 @@ function BannerAds() {
                 data-ts-extid="{extid}"
                 async
                 defer
-            /> */}
+            />
 
 
 
-            {/* Adcash */}
-            <Script id="banner-script" strategy="afterInteractive">
-                {`
-          aclib.runBanner({
-            zoneId: '10331322',
-          });
-        `}
-            </Script>
+    
 
 
 
